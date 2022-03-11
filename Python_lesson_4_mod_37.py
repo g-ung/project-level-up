@@ -1,4 +1,4 @@
-# AI Porgamming with Python: Lesson 4 Control Flow, Module 37: List Comprehension: Extract First Names; Multiple of 3s; Filter Names by Scores
+# AI Porgamming with Python: Lesson 4 Control Flow, Module 37: List Comprehension: Extract First Names; Multiple of 3s; Filter Names by Scores; Multiple of Three
 ## extract first names
 ## 
 from multiprocessing.sharedctypes import Value
