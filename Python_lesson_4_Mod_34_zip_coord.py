@@ -1,4 +1,4 @@
-# AI Porgamming with Python: Lesson 4 Control Flow, Module 34: Zip Coordinates; Zip Lists a Dictionary; Unzip Tuples
+# AI Porgamming with Python: Lesson 4 Control Flow, Module 34: Zip Coordinates; Zip Lists a Dictionary; Unzip Tuples; Transpose with Zip; Enumerate
 ## Zip Coordinates
 x_coord = [23, 53, 2, -12, 95, 103, 14, -5]
 y_coord = [677, 233, 405, 433, 905, 376, 432, 445]
@@ -28,3 +28,19 @@ names, heights = zip(*cast)
 
 print("\n", names)
 print(heights)
+
+## transpose with zip
+data = ((0, 1, 2), (3, 4, 5), (6, 7, 8), (9, 10, 11))
+
+data_transpose = tuple(zip(*data)) # replace with your code
+print("\n", data_transpose)
+
+## enumerate
+cast = ["Barney Stinson", "Robin Scherbatsky", "Ted Mosby", "Lily Aldrin", "Marshall Eriksen"]
+heights = [72, 68, 72, 66, 76]
+
+# write your for loop here
+for index, actor in enumerate(cast): # index and actor are mapped to cast list
+    cast[index] = actor + " " + str(heights[index]) # index used to map cast to heights list, actor loop variable is mapped to cast list
+
+print("\n", cast)
