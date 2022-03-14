@@ -1,9 +1,6 @@
 # AI Porgamming with Python: Lesson 4 Control Flow, Module 37: List Comprehension: Extract First Names; Multiple of 3s; Filter Names by Scores
 ## extract first names
 ## 
-from multiprocessing.sharedctypes import Value
-
-
 names = ["Rick Sanchez", "Morty Smith", "Summer Smith", "Jerry Smith", "Beth Smith"]
 
 first_names = [name.split()[0].lower() for name in names] # us split method to split loop variable name starting with index 0, i.e. name.split()[0] >>> split 'Rick Sanchez'
