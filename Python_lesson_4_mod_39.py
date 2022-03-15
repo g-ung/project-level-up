@@ -18,7 +18,14 @@ for year, list_of_dirs in nominated.items(): # use items() method to extract key
             nom_count_dict[director] += 1 # increment count by 1
             # check with
             # print(nom_count_dict)
-
+'''
+# get() method version
+for year, list_of_dirs in nominated.items(): # same as above extract the values of list of directors from nominated dictionary
+    for director in list_of_dirs: # iterate thru the list of directors
+        # if the key 'Norman Taurog' not exist in nom_count_dict, get() and return value 0 and nom_count_dict[director] set to 1; when loop encounter a key that already exist value++
+        # 2nd key 'Wesley Ruggles' value set to +1 resulting in 1
+        nom_count_dict[director] = nom_count_dict.get(director, 0) + 1
+'''
 print("nom_count_dict = {}\n".format(nom_count_dict))
 ###################################################################################################################
 ###################################################################################################################
@@ -26,7 +33,7 @@ print("nom_count_dict = {}\n".format(nom_count_dict))
 ### Question 1B: Create dictionary with the count of Oscar wins for each director
 win_count_dict = {} # create empty dictionary to store key, value
 # Add your solution code below before line 20. Add more lines for your code as needed.
-for year, list_of_winner_dirs in winners.items(): # use items() method to extract key, value (list of directors who won an Oscar) into tuple pairs
+for year, list_of_winner_dirs in winners.items(): # use items() method to extract key, value (list of directors who won an Oscar) into tuple pairs; same approach as above
     for win_dir in list_of_winner_dirs:
         if win_dir not in win_count_dict:
             win_count_dict[win_dir] = 1
