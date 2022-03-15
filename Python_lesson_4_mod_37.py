@@ -41,7 +41,7 @@ print("\n", passed)
 
 ## for loop version
 you_passed = []
-for key, value in scores.items():
-    if  value >= 65:
-        you_passed.append(key)
+for name, score in scores.items():
+    if  score >= 65:
+        you_passed.append(name)
 print("\n", you_passed)
