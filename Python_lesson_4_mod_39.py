@@ -59,8 +59,8 @@ for year, winning_dir in winners.items(): # use same approach from Q1b, create a
     for winner in winning_dir:
         win_count_dict[winner] = win_count_dict.get(winner, 0) + 1
 '''
-for key, value in win_count_dict.items(): # iterate thruough dictionary of winning directors
-    # checks the count of directors with most wins agains value of win_count_dict, everytime we find a new most_win_count replace with higher value and clear most_win_director list with new key, i.e. director
+for key, value in win_count_dict.items(): # iterate thruough dictionary of winning directors; where keys are the direcor's names and vlaue are the no. of Oscar wins
+    # checks the count of directors with most wins against value (no. of Oscar wins) of win_count_dict, everytime we find a new most_win_count replace with higher value and clear most_win_director list with new key, i.e. director
     if value > most_win_count: 
         most_win_count =  value
         most_win_director.clear() # use clear meather to empty a list
