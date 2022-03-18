@@ -14,7 +14,3 @@ to {} if you submit all assignments before the due date.\n\n"
 # write a for loop that iterates through each set of names, assignments, and grades to print each student's message
 for name, assignment, grade in zip(names, assignments, grades):
     print(message.format(name, assignment, grade, int(grade) + int(assignment)*2))
-
-## write a for loop version for practice
-
-
