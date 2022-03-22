@@ -7,15 +7,17 @@ def create_cast_list(filename):
     with open('/Users/gabe_ung/Desktop/flying_circus_cast.txt') as f:
     #use the for loop syntax to process each line
     ## list comprehension
-        #cast_list = [line.split(",")[0] for line in f] # use index[0] to extract only the names from the file
+        cast_list = [line.split(",")[0] for line in f] # use index[0] to extract only the names from the file
         
     ## for loop version for practice
+        '''
         for line in f:
             contents = line.split(",")
-             # check with print(line.split(","))
-            print(line.split(","))      
+             # check with print(line.split(",")[0]) # use indext of [0] to reference the extraction of the first element within list
+            # print(line.split(",")) # creates list of each line
     #and add the actor name to cast_list
             cast_list.append(contents)
+        '''
         
     return cast_list
 
