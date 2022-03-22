@@ -1,4 +1,4 @@
-# AI Porgamming with Python: Lesson 5 Scripting, Module 9: Generate Messages
+# AI Porgamming with Python: Lesson 6 Scripting, Module 9: Generate Messages
 
 ## generate messages
 names =  input("Please enter name(s) seperated by commas: ").title().split(",") # get and process input for a list of names
