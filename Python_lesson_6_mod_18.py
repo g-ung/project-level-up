@@ -10,14 +10,14 @@ def create_cast_list(filename):
         cast_list = [line.split(",")[0] for line in f] # use index[0] to extract only the names from the file
         
     ## for loop version for practice
-        '''
+    
         for line in f:
-            contents = line.split(",")
-             # check with print(line.split(",")[0]) # use indext of [0] to reference the extraction of the first element within list
+            contents = line.split(",")[0]
             # print(line.split(",")) # creates list of each line
+            # check with print(line.split(",")[0]) # use indext of [0] to reference the extraction of the first element within list
     #and add the actor name to cast_list
             cast_list.append(contents)
-        '''
+        
         
     return cast_list
 
