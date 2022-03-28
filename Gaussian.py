@@ -39,7 +39,7 @@ class Gaussian():
                 
     def calculate_stdev(self, sample=True):
         """
-        Function to calculate the standard deviation of the data set.
+        Method to calculate the standard deviation of the data set.
         
         Args: 
             sample (bool): whether the data represents a sample or population
@@ -74,7 +74,7 @@ class Gaussian():
         
     def read_data_file(self, file_name, sample=True):
         """
-        Function to read in data from a txt file. The txt file should have
+        Method to read in data from a txt file. The txt file should have
         one number (float) per line. The numbers are stored in the data attribute. 
         After reading in the file, the mean and standard deviation are calculated
                 
@@ -107,7 +107,7 @@ class Gaussian():
                 
     def plot_histogram(self):
         """
-        Function to output a histogram of the instance variable data using 
+        Method to output a histogram of the instance variable data using 
         matplotlib pyplot library.
         
         Args:
@@ -143,7 +143,7 @@ class Gaussian():
 
     def plot_histogram_pdf(self, n_spaces = 50):
         """
-        Function to plot the normalized histogram of the data and a plot of the 
+        Method to plot the normalized histogram of the data and a plot of the 
         probability density function along the same range
         
         Args:
@@ -180,7 +180,7 @@ class Gaussian():
         fig.subplots_adjust(hspace = 0.5)
         axis[0].hist(self.data, density=True)
         axis[0].set_title("Normed Histogram of Data")
-        axis[0].set_ylabel("Density"
+        axis[0].set_ylabel("Density")
 
         axis[1].plot(x, y)
         axis[1].set_title("Normal Distribution for \n Sample Mean and Sample Standard Deviation")
@@ -189,3 +189,56 @@ class Gaussian():
         plt.show()
 
         return x, y
+
+ def __add__(self, other):
+
+        """
+        Method to add together two Gaussian distributions
+
+        Args:
+            other (Gaussian): Gaussian instance
+
+        Returns:
+            Gaussian: Gaussian distribution
+
+        """
+        # TODO: Calculate the results of summing two Gaussian distributions
+        #   When summing two Gaussian distributions, the mean value is the sum
+        #       of the means of each Gaussian.
+        #
+        #   When summing two Gaussian distributions, the standard deviation is the
+        #       square root of the sum of square ie sqrt(stdev_one ^ 2 + stdev_two ^ 2)
+        
+        # create a new Gaussian object
+
+        result = Gaussian()
+        # TODO: calculate the mean and standard deviation of the sum of two Gaussians
+        result.mean = self.mean + other.mean
+        result.stdev = math.sqrt(self.stdev ** 2 + other.stdev ** 2)
+
+        return result
+
+
+    def __repr__(self):
+
+        """
+        Method to output the characteristics of the Gaussian instance
+
+        Args:
+            None
+
+        Returns:
+            string: characteristics of the Gaussian
+
+        """
+
+        # TODO: Return a string in the following format - 
+        # "mean mean_value, standard deviation standard_deviation_value"
+        # where mean_value is the mean of the Gaussian distribution
+        # and standard_deviation_value is the standard deviation of
+        # the Gaussian.
+        # For example "mean 3.5, standard deviation 1.3"
+        return "mean {}, standard deviation {}".format(self.mean, self.stdev)
+       
+        
+            
