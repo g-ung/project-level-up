@@ -158,14 +158,14 @@ class Gaussian():
             
         """
         
-        #TODO: Nothing to do for this method. Try it out and see how it works.
+        # TODO: Nothing to do for this method. Try it out and see how it works.
         mu = self.mean
         sigma = self.stdev
 
         min_range = min(self.data)
         max_range = max(self.data)
         
-         # calculates the interval between x values
+        # calculates the interval between x values
         interval = 1.0 * (max_range - min_range) / n_spaces
 
         x = []
@@ -178,16 +178,16 @@ class Gaussian():
             y.append(self.pdf(tmp))
 
         # build and display the graph
-        fig, axes = plt.subplots(2, sharex=True)
+        fig, axis = plt.subplots(2, sharex=True)
         
-        fig.subplots_adjust(hspace = .5)
-        axes[0].hist(self.data, density = True)
-        axes[0].set_title("Normed Histogram of Data")
-        axes[0].set_ylabel("Density"
+        fig.subplots_adjust(hspace=.5)
+        axis[0].hist(self.data, density=True)
+        axis[0].set_title("Normed Histogram of Data")
+        axis[0].set_ylabel("Density"
 
-        axes[1].plot(x, y)
-        axes[1].set_title("Normal Distribution for \n Sample Mean and Sample Standard Deviation")
-        axes[0].set_ylabel("Density")
+        axis[1].plot(x, y)
+        axis[1].set_title("Normal Distribution for \n Sample Mean and Sample Standard Deviation")
+        axis[0].set_ylabel("Density")
         
         plt.show()
 
