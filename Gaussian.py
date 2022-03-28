@@ -38,7 +38,6 @@ class Gaussian():
         return self.mean
                 
     def calculate_stdev(self, sample=True):
-
         """
         Function to calculate the standard deviation of the data set.
         
@@ -74,7 +73,6 @@ class Gaussian():
         return self.stdv
         
     def read_data_file(self, file_name, sample=True):
-    
         """
         Function to read in data from a txt file. The txt file should have
         one number (float) per line. The numbers are stored in the data attribute. 
@@ -144,7 +142,6 @@ class Gaussian():
         return (1.0 / (self.stdev * math.sqrt(2*math.pi))) * math.exp(-0.5*((x - self.mean) / self.stdev)**2)   
 
     def plot_histogram_pdf(self, n_spaces = 50):
-
         """
         Function to plot the normalized histogram of the data and a plot of the 
         probability density function along the same range
