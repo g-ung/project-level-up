@@ -143,7 +143,7 @@ class Gaussian():
 
     def plot_histogram_pdf(self, n_spaces = 50):
         """
-        Method to plot the normalized histogram of the data and a plot of the 
+        Method to plot the normalised histogram of the data and a plot of the 
         probability density function along the same range
         
         Args:
@@ -190,7 +190,7 @@ class Gaussian():
 
         return x, y
 
- def __add__(self, other):
+    def __add__(self, other):
 
         """
         Method to add together two Gaussian distributions
@@ -217,7 +217,6 @@ class Gaussian():
         result.stdev = math.sqrt(self.stdev ** 2 + other.stdev ** 2)
 
         return result
-
 
     def __repr__(self):
 
