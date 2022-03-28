@@ -29,7 +29,7 @@ class Gaussian():
             float: mean of the data set
         """
         
-        #TODO: Calculate the mean of the data set. Remember that the data set is stored in self.data
+        # TODO: Calculate the mean of the data set. Remember that the data set is stored in self.data
         # Change the value of the mean attribute to be the mean of the data set
         # Return the mean of the data set           
         avg = 1.0*sum(self.data) / len(self.data) # mu (the average) = sum of all the valuse in self.data list / by len(self.data)
