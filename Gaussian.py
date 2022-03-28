@@ -180,7 +180,7 @@ class Gaussian():
         # build and display the graph
         fig, axis = plt.subplots(2, sharex=True)
         
-        fig.subplots_adjust(hspace=.5)
+        fig.subplots_adjust(hspace = 0.5)
         axis[0].hist(self.data, density=True)
         axis[0].set_title("Normed Histogram of Data")
         axis[0].set_ylabel("Density"
