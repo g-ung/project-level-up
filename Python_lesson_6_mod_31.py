@@ -15,7 +15,7 @@ def name_flower_dict(filename):
     flower_dict = {}
     with open('/Users/gabe_ung/Desktop/flowers.txt', 'r') as f: # open file: flowers.txt
         for line in f:
-            letter, flower = line.strip().lower().split(':') # split the line where there is a ':'
+            letter, flower = line.strip().lower().split(':') # split the line where there is a ':', convert capital letters with lower() and strip whitespace
             flower_dict[letter] = flower.strip() # build dictionary with key (letter), value (flower) from file: flowers.txt
     return flower_dict
 
@@ -24,7 +24,7 @@ def name_flower_dict(filename):
 def main():
     the_flower_dict = name_flower_dict('/Users/gabe_ung/Desktop/flowers.txt')
     full_name = input("Please enter your first [space] last name only: ")
-    first_name = full_name[0].lower()
+    first_name = full_name[0].lower() # lower() to convert name input to lower case
     first_letter = first_name[0]
     # prints output from user with value for corresponding key (letter) in flower_dict dictionary
     print("Unique flower name with the first letter: {}".format(the_flower_dict[first_letter]))
