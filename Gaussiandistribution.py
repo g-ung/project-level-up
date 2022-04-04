@@ -1,9 +1,10 @@
 import math
 import matplotlib.pyplot as plt
-from Generaldistribution import Distribution
+from .Generaldistribution import Distribution
 
 class Gaussian(Distribution):
-	""" Gaussian distribution class for calculating and 
+	'''
+    Gaussian distribution class for calculating and 
 	visualizing a Gaussian distribution.
 	
 	Attributes:
@@ -11,15 +12,16 @@ class Gaussian(Distribution):
 		stdev (float) representing the standard deviation of the distribution
 		data_list (list of floats) a list of floats extracted from the data file
 			
-	"""
-	def __init__(self, mu=0, sigma=1):
+	'''
+	def __init__(self, mu = 0, sigma = 1):
 		
 		Distribution.__init__(self, mu, sigma)
 
 	
 	def calculate_mean(self):
 	
-		"""Function to calculate the mean of the data set.
+		'''
+        Function to calculate the mean of the data set.
 		
 		Args: 
 			None
@@ -27,7 +29,7 @@ class Gaussian(Distribution):
 		Returns: 
 			float: mean of the data set
 	
-		"""
+		'''
 					
 		avg = 1.0 * sum(self.data) / len(self.data)
 		
@@ -39,7 +41,8 @@ class Gaussian(Distribution):
 
 	def calculate_stdev(self, sample=True):
 
-		"""Function to calculate the standard deviation of the data set.
+		'''
+        Function to calculate the standard deviation of the data set.
 		
 		Args: 
 			sample (bool): whether the data represents a sample or population
@@ -47,7 +50,7 @@ class Gaussian(Distribution):
 		Returns: 
 			float: standard deviation of the data set
 	
-		"""
+		'''
 
 		if sample:
 			n = len(self.data) - 1
@@ -70,7 +73,8 @@ class Gaussian(Distribution):
 
 	def read_data_file(self, file_name, sample=True):
 	
-		"""Function to read in data from a txt file. The txt file should have
+		'''
+        Function to read in data from a txt file. The txt file should have
 		one number (float) per line. The numbers are stored in the data attribute. 
 		After reading in the file, the mean and standard deviation are calculated
 				
@@ -80,15 +84,15 @@ class Gaussian(Distribution):
 		Returns:
 			None
 		
-		"""
-			
+		'''
+		# this read data file is here because I want to overide the read data file class 
+        # from the Distribution class to calculate the mean and standard deviation
 		with open(file_name) as file:
 			data_list = []
 			line = file.readline()
 			while line:
 				data_list.append(int(line))
 				line = file.readline()
-		file.close()
 	
 		self.data = data_list
 		self.mean = self.calculate_mean()
@@ -96,7 +100,9 @@ class Gaussian(Distribution):
 		
 		
 	def plot_histogram(self):
-		"""Function to output a histogram of the instance variable data using 
+
+		'''
+        Function to output a histogram of the instance variable data using 
 		matplotlib pyplot library.
 		
 		Args:
@@ -104,7 +110,8 @@ class Gaussian(Distribution):
 			
 		Returns:
 			None
-		"""
+		'''
+
 		plt.hist(self.data)
 		plt.title('Histogram of Data')
 		plt.xlabel('data')
@@ -113,7 +120,9 @@ class Gaussian(Distribution):
 		
 		
 	def pdf(self, x):
-		"""Probability density function calculator for the gaussian distribution.
+
+		'''
+        Probability density function calculator for the gaussian distribution.
 		
 		Args:
 			x (float): point for calculating the probability density function
@@ -121,14 +130,15 @@ class Gaussian(Distribution):
 		
 		Returns:
 			float: probability density function output
-		"""
+		'''
 		
 		return (1.0 / (self.stdev * math.sqrt(2*math.pi))) * math.exp(-0.5*((x - self.mean) / self.stdev) ** 2)
 		
 
 	def plot_histogram_pdf(self, n_spaces = 50):
 
-		"""Function to plot the normalized histogram of the data and a plot of the 
+		'''
+        Function to plot the normalized histogram of the data and a plot of the 
 		probability density function along the same range
 		
 		Args:
@@ -137,8 +147,7 @@ class Gaussian(Distribution):
 		Returns:
 			list: x values for the pdf plot
 			list: y values for the pdf plot
-			
-		"""
+		'''
 		
 		mu = self.mean
 		sigma = self.stdev
@@ -174,15 +183,15 @@ class Gaussian(Distribution):
 		
 	def __add__(self, other):
 		
-		"""Function to add together two Gaussian distributions
+		'''
+        Function to add together two Gaussian distributions
 		
 		Args:
 			other (Gaussian): Gaussian instance
 			
 		Returns:
 			Gaussian: Gaussian distribution
-			
-		"""
+		'''
 		
 		result = Gaussian()
 		result.mean = self.mean + other.mean
@@ -193,14 +202,14 @@ class Gaussian(Distribution):
 		
 	def __repr__(self):
 	
-		"""Function to output the characteristics of the Gaussian instance
+		'''
+        Function to output the characteristics of the Gaussian instance
 		
 		Args:
 			None
 		
 		Returns:
 			string: characteristics of the Gaussian
-		
-		"""
+		'''
 		
 		return "mean {}, standard deviation {}".format(self.mean, self.stdev)

@@ -1,7 +1,7 @@
 import math
 import matplotlib.pyplot as plt
 
-class Gaussian():
+class Gaussian(Distrbution):
     """
     Gaussian distribution class for calculating and 
     visualizing a Gaussian distribution.
@@ -71,7 +71,8 @@ class Gaussian():
         self.stdv = sigma
         
         return self.stdv
-        
+    
+    '''    
     def read_data_file(self, file_name, sample=True):
         """
         Method to read in data from a txt file. The txt file should have
@@ -104,6 +105,7 @@ class Gaussian():
         #       You can use the calculate_mean() method with self.calculate_mean()
         #   Update self.stdev with the standard deviation of the data_list. Use the 
         #       calcaulte_stdev() method.
+    '''
                 
     def plot_histogram(self):
         """

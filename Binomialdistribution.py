@@ -2,7 +2,6 @@ import math
 import matplotlib.pyplot as plt
 from .Generaldistribution import Distribution
 
-
 class Binomial(Distribution):
     """ Binomial distribution class for calculating and 
     visualizing a Binomial distribution.
@@ -67,7 +66,6 @@ class Binomial(Distribution):
         
         # TODO: calculate the mean of the Binomial distribution. Store the mean
         #       via the self variable and also return the new mean value
-                
         self.mean = self.p * self.n
         
         return self.mean
