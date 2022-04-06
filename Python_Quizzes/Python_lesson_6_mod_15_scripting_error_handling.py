@@ -1,4 +1,4 @@
-# AI Porgamming with Python: Lesson 5 Scripting, Module 9: Handling Input Errors
+# AI Porgamming with Python: Lesson 6 Scripting, Module 9: Handling Input Errors
 
 def party_planner(cookies, people):
     leftovers = None

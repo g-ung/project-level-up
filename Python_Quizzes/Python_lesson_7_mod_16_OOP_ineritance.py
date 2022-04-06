@@ -1,4 +1,4 @@
-# AI Porgamming with Python: Lesson 7 Object-Oriented Programming, Module 16 Inheritace
+# AI Porgamming with Python: Lesson 7 Object-Oriented Programming, Module 16 Inheritance
 
 class Clothing:
 
