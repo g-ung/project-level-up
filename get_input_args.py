@@ -22,7 +22,7 @@ import argparse
 #       collection that you created with this function
 # 
 def get_input_args():
-    """
+    '''
     Retrieves and parses the 3 command line arguments provided by the user when
     they run the program from a terminal window. This function uses Python's 
     argparse module to created and defined these 3 command line arguments. If 
@@ -37,7 +37,7 @@ def get_input_args():
      None - simply using argparse module to create & store command line arguments
     Returns:
      parse_args() -data structure that stores the command line arguments object  
-    """
+    '''
     # Create Parse using ArgumentParser
     parser = argparse.ArgumentPaser()
     args = parser.parser_args()
@@ -59,7 +59,7 @@ def get_input_args():
     '''
     parser.add_argument('--arch', default='vgg', help='The ddesired CNN Model Architecture', type=str)
     
-     '''
+    '''
     argument parser for dogname.txt
     references:
         https://www.golinuxcloud.com/python-argparse/
