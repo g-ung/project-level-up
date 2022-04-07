@@ -52,7 +52,7 @@ def get_pet_labels(image_dir):
     image_files = listdir(image_dir)
     
     # create empty dictionary to store contents from image_dir
-    results_dic = ()
+    results_dic = {}
     
     '''
     use os.pth.splitext() to split content from image_dir from the root and extension
