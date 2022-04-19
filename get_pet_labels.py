@@ -84,6 +84,10 @@ def get_pet_labels(image_dir):
                 results_dic[image_files[i]] = results_dic.get(pet_breed) # populate dictionary with pet breed key = dog image, value = dog breed label
             else:
                 print("** Warning: Duplicate key: ", image_files[i], " exist in dictionary: results_dic with value: ", results_dic[image_files[i]])
+    # check with
+    print("\nresults_dic output:")
+    for key in results_dic:
+        print("Image file: ", key, " Breed: ", results_dic[key][0])
              
     # Replace None with the results_dic dictionary that you created with this
     # function

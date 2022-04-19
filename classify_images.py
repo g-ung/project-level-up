@@ -4,7 +4,7 @@
 #                                                                             
 # PROGRAMMER: G. Ung
 # DATE CREATED: Friday 8th April 2022                            
-# REVISED DATE: 
+# REVISED DATE: Thursday 14th April 2022
 # PURPOSE: Create a function classify_images that uses the classifier function 
 #          to create the classifier labels and then compares the classifier 
 #          labels to the pet image labels. This function inputs:
@@ -65,4 +65,27 @@ def classify_images(images_dir, results_dic, model):
      Returns:
            None - results_dic is mutable data type so no return needed.         
     """
-    None 
+    for key in results_dic:
+        path = images_dir + key # path where image files are stored + key = image
+        m_label = classifier(path, model) # setup m_label with path where image files are stored, the image file (key), and model used
+        m_label = m_label.lower().strip() # lower() and strip() and update m_label (classifier args: path, model)
+        results_dic[key].get(m_label)
+        
+        truth = results_dic[key][0]
+        
+        if truth in m_label:
+            
+            '''
+            use extend() to concatinate list
+            references:
+                https://www.programiz.com/python-programming/methods/list/extend
+            '''
+            results_dic[key].extend([m_label, 1]) # confident of match
+        else:
+            results_dic[key].extend([m_label, 0] # match not detected
+        
+        for key in results_dic[key]:
+            if results_dic[key][2] == 1:
+                print(results_dic[key])
+
+return None
