@@ -69,7 +69,7 @@ def classify_images(images_dir, results_dic, model):
         path = images_dir + key # path where image files are stored + key = image
         m_label = classifier(path, model) # setup m_label with path where image files are stored, the image file (key), and model used
         m_label = m_label.lower().strip() # lower() and strip() and update m_label (classifier args: path, model)
-        results_dic[key].get(m_label)
+        results_dic[key].get(m_label) # populate results_dic
         
         truth = results_dic[key][0]
         
@@ -82,7 +82,7 @@ def classify_images(images_dir, results_dic, model):
             '''
             results_dic[key].extend([m_label, 1]) # confident of match
         else:
-            results_dic[key].extend([m_label, 0] # match not detected
+            results_dic[key].extend([m_label, 0]) # match not detected
         
         for key in results_dic[key]:
             if results_dic[key][2] == 1:

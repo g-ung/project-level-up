@@ -70,7 +70,7 @@ def get_pet_labels(image_dir):
             # temp variable to store pet label from image_dir
             pet_breed = ""
             '''
-            use isalpha() to check/split the numeric and alphabetical parts label
+            use isalpha() to check/split the numeric and alphabetical parts of label
             references:
                 https://www.tutorialspoint.com/python/string_isalpha.htm
             '''
@@ -85,9 +85,9 @@ def get_pet_labels(image_dir):
             else:
                 print("** Warning: Duplicate key: ", image_files[i], " exist in dictionary: results_dic with value: ", results_dic[image_files[i]])
     # check with
-    print("\nresults_dic output:")
-    for key in results_dic:
-        print("Image file: ", key, " Breed: ", results_dic[key][0])
+    # print("\nresults_dic output:")
+    #for key in results_dic:
+    #    print("Image file: ", key, " Breed: ", results_dic[key][0])
              
     # Replace None with the results_dic dictionary that you created with this
     # function
