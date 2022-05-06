@@ -1,5 +1,5 @@
 def comma(some_list):
-  # join() list approach
+  # join() list, slice approach
   some_list.insert(3, 'and')  
   string_final = " ".join(some_list)
   string_final = string_final[:19] + ',' + string_final[19:-1]
