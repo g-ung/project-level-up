@@ -9,19 +9,12 @@ able to work with any list value passed to it. Be sure to test the case where
 an empty list [] is passed to your function.
 '''
 def comma(some_list):
-  # for loop, string.find() approach
-  some_list.insert(3, 'and')
-  some_list.insert(3, ',')
-  string = ""
-  for i in some_list:
-    string += i + " "
-  
-  index = string.find(',')
-  string_final = string[:index-1] + '' + string[index:]
-
-  return print(string_final)
-  
+  # join() approach
+  if len(some_list) <= 2:
+    return print(" and ".join(some_list))
+  else:
+    return print("{}, and {}".format(', '.join(some_list[:-1]), some_list[-1]))
+   
 my_list = ['apples', 'bananas', 'tofu', 'cats']
-# my_list = []
 comma(my_list)
 
