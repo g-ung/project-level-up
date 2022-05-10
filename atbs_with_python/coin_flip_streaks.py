@@ -34,6 +34,5 @@ for sample_size in range(10000):
         
         if streak_count == 6: # when a streak_count == 6 num_of_streaks is incremented by 1
             num_of_streaks += 1
-            break
   
 print("Chance of streak: {}%".format(num_of_streaks / 100))
