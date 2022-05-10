@@ -2,10 +2,11 @@ import random
 
 num_of_streaks = 0
 streak_count = 0
-flip_list = []
+
 
 for sample_size in range(10000):
     # Code that creates a list of 100 'heads or 'tails' values.
+    flip_list = [] # empty list to store no. heads/tails
     for i in range(100):
         if random.randint(0,1) == 1: # if 1 it is heads, append() 'H' to some_list
             flip_list.append('H')
@@ -34,5 +35,5 @@ for sample_size in range(10000):
         
         if streak_count == 6: # when a streak_count == 6 num_of_streaks is incremented by 1
             num_of_streaks += 1
-  
+             
 print("Chance of streak: {}%".format(num_of_streaks / 100))
