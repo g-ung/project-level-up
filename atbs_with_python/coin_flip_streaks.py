@@ -6,7 +6,7 @@ streak_count = 0
 
 for sample_size in range(10000):
     # Code that creates a list of 100 'heads or 'tails' values.
-    flip_list = [] # empty list to store no. heads/tails
+    flip_list = [] # empty list to store no. heads/tails; reset list after each 100 cycles
     for i in range(100):
         if random.randint(0,1) == 1: # if 1 it is heads, append() 'H' to some_list
             flip_list.append('H')
