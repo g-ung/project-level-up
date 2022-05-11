@@ -15,8 +15,8 @@ for sample_size in range(10000):
 # Code that checks if there is a streak of 6 heads or tails in a row.
     for index, item in enumerate(flip_list):
         '''
-        Could use for i in range(len(some_list)) to access the index in loop
-        variable i enumerate returns an iterable with index
+        Use enumerate to returns an iterable with index to access items in
+        flip_list
         REFERENCE:
         https://www.programiz.com/python-programming/methods/built-in/enumerate
         '''
