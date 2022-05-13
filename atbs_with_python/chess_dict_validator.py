@@ -47,17 +47,17 @@ def is_valid_chess_board():
                 else: # colour code for pawns
                     for pawn in range(1, 9):
                         colourcoded_pieces.append('b' + item + str(pawn))
-            else:
+        else:
             # build white pieces
-                for item in chess_pieces:
-                    if item == 'kind' or item == 'queen':
-                        colourcoded_pieces.append('w' + item)
-                    elif item == 'rook' or item == 'knight' or item == 'bishop':
-                        for i in range(1, 3): #
-                            colourcoded_pieces.append('w' + item + str(i))
-                    else:
-                        for pawn in range(1, 9):
-                            colourcoded_pieces.append('w' + item + str(pawn)) 
+            for item in chess_pieces:
+                if item == 'kind' or item == 'queen':
+                    colourcoded_pieces.append('w' + item)
+                elif item == 'rook' or item == 'knight' or item == 'bishop':
+                    for i in range(1, 3): #
+                        colourcoded_pieces.append('w' + item + str(i))
+                else:
+                    for pawn in range(1, 9):
+                        colourcoded_pieces.append('w' + item + str(pawn)) 
 
     # adding chess pieces to chess_board_dict
 
@@ -66,7 +66,6 @@ def is_valid_chess_board():
     print(colourcoded_pieces)
     # check with
     # return print(chess_board_list)
-    # return print(chess_board_dict)
 
 '''
 # chess board represented in a dictionary  
@@ -79,6 +78,12 @@ def is_valid_chess_board():
                'a6': ' ', 'b6': ' ', 'c6': ' ', 'd6': ' ', 'e6': ' ', 'f6': ' ', 'g6': ' ', 'h6': ' ',
                'a7': ' ', 'b7': ' ', 'c7': ' ', 'd7': ' ', 'e7': ' ', 'f7': ' ', 'g7': ' ', 'h7': ' ',
                'a8': ' ', 'b8': ' ', 'c8': ' ', 'd8': ' ', 'e8': ' ', 'f8': ' ', 'g8': ' ', 'h8': ' '}
+# colourcoded_pieces
+# expect output
+['bpawn1', 'bpawn2', 'bpawn3', 'bpawn4', 'bpawn5', 'bpawn6', 'bpawn7', 'bpawn8', 
+        'brook1', 'brook2', 'bknight1', 'bknight2', 'bbishop1', 'bbishop2', 'bqueen', 'bking', 
+        'wpawn1', 'wpawn2', 'wpawn3', 'wpawn4', 'wpawn5', 'wpawn6', 'wpawn7', 'wpawn8', 
+        'wrook1', 'wrook2', 'wknight1', 'wknight2', 'wbishop1', 'wbishop2', 'wqueen', 'wking']
 '''               
 # building the chess board from it's constituent parts
 # coordinates that represent the chess board, 64 tiles
