@@ -56,6 +56,11 @@ def is_valid_chess_board():
         else:
             for pawn in range(1, 9):
                 colourcoded_pieces.append('w' + item + str(pawn)) 
+    
+    # adding chess pieces to chess_board_dict
+    for key, value in chess_board_dict.items():
+        chess_board_dict[key] = chess_board_dict[key,value]
+
 
     print(colourcoded_pieces)
     # check with
