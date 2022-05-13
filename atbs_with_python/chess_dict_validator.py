@@ -7,33 +7,60 @@ be on valid tile from '1a' to '8h'
 by name of the pieces, i.e. 'pawn', 'knight', 'bishop' etc. eg. 'wpawn'
 4. The funtion should detect when a bug has reulsted in an impropter chess board 
 '''
-import pprint
 
 def is_valid_chess_board():
-    # create empty chess board to store key: coordinates, value: chess pieces
-    chess_board_dict = {}
-    
-    # Build the chess board
+    chess_board_dict = {} # create empty chess board to store key: coordinates, value: chess pieces
     chess_board_list = [] # empty chess board list to store coordinates
+    
+    # Building the chess board
     for num in range(1, 9): # iterate to build board y-axis, numnbers
-        for char in range(97, 105):
+        for char in range(97, 105): # iterate to build board x-axis, letters
             '''
             Took me AGES to find this neat little built-in Pythong function.
-            use chr() to build board x-axis
+            The range(97, 105) reprecent lower case characters in decimal,
+            use ascii table to look up the key mappings. Use chr() to convert
+            decimal values to their corresponding string characters to
+            build board x-axis
             REFERENCE:
             https://docs.python.org/3/library/functions.html?highlight=chr#chr
             https://www.programiz.com/python-programming/methods/built-in/chr
             '''
             chess_board_list.append(chr(char) + str(num))
-            for tile_coord in chess_board_list: # build chess_board_dict by adding chess_board_list to chess_board_dict
+            for tile_coord in chess_board_list: # use get() to build chess_board_dict
                 chess_board_dict[tile_coord] = chess_board_dict.get(tile_coord, ' ')
+    
+    # build chess pieces and chess piece colours
+    colourcoded_pieces = []
+    pieces = ['pawn', 'rook', 'knight', 'bishop', 'queen', 'king']
+    # list comprehension for practice :)
+    # colourcoded_pieces = ['b' + item for item in pieces if item == 'king' or item == 'queen'] 
+    for item in pieces:
+        if item == 'kind' or item == 'queen':
+            colourcoded_pieces.append('b' + item)
+        elif item == 'rook' or item == 'knight' or item == 'bishop':
+            for i in range(1, 3): # use range to concatinate index i to items in elif statment b/c each player has 2x(rooks, knights, and bishops)
+                colourcoded_pieces.append('b' + item + str(i))
+        else: # colour code for pawns
+            for pawn in range(1, 9):
+                colourcoded_pieces.append('b' + item + str(pawn))
+    
+    for item in pieces:
+       if item == 'kind' or item == 'queen':
+            colourcoded_pieces.append('w' + item)
+        elif item == 'rook' or item == 'knight' or item == 'bishop':
+            for i in range(1, 3): #
+                colourcoded_pieces.append('w' + item + str(i))
+        else:
+            for pawn in range(1, 9):
+                colourcoded_pieces.append('w' + item + str(pawn)) 
+
+    print(colourcoded_pieces)
     # check with
     # return print(chess_board_list)
     # return print(chess_board_dict)
 
-    chess_board_dict
 '''
-# chess board represented in a dictionary
+# chess board represented in a dictionary  
 # expected output
 {'a1': ' ', 'b1': ' ', 'c1': ' ', 'd1': ' ', 'e1': ' ', 'f1': ' ', 'g1': ' ', 'h1': ' ',
                'a2': ' ', 'b2': ' ', 'c2': ' ', 'd2': ' ', 'e2': ' ', 'f2': ' ', 'g2': ' ', 'h2': ' ',
