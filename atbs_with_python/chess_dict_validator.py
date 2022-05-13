@@ -17,7 +17,7 @@ def is_valid_chess_board():
         for char in range(97, 105): # iterate to build board x-axis, letters
             '''
             Took me AGES to find this neat little built-in Pythong function.
-            The range(97, 105) reprecent lower case characters in decimal,
+            The range(97, 105) represent lower case characters in decimal,
             use ascii table to look up the key mappings. Use chr() to convert
             decimal values to their corresponding string characters to
             build board x-axis
@@ -29,11 +29,14 @@ def is_valid_chess_board():
             for tile_coord in chess_board_list: # use get() to build chess_board_dict
                 chess_board_dict[tile_coord] = chess_board_dict.get(tile_coord, ' ')
     
-    # build chess pieces and chess piece colours
-    colourcoded_pieces = []
+    # build chess pieces by marryiing chess piece colours to chess piece set
+    colourcoded_pieces = [] # empty list to stored the completed chess pieces (with colours)
     pieces = ['pawn', 'rook', 'knight', 'bishop', 'queen', 'king']
+   
     # list comprehension for practice :)
     # colourcoded_pieces = ['b' + item for item in pieces if item == 'king' or item == 'queen'] 
+   
+    # build black pieces
     for item in pieces:
         if item == 'kind' or item == 'queen':
             colourcoded_pieces.append('b' + item)
@@ -43,7 +46,7 @@ def is_valid_chess_board():
         else: # colour code for pawns
             for pawn in range(1, 9):
                 colourcoded_pieces.append('b' + item + str(pawn))
-    
+    # build white pieces
     for item in pieces:
        if item == 'kind' or item == 'queen':
             colourcoded_pieces.append('w' + item)
