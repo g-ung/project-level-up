@@ -31,35 +31,36 @@ def is_valid_chess_board():
     
     # build chess pieces by marryiing chess piece colours to chess piece set
     colourcoded_pieces = [] # empty list to stored the completed chess pieces (with colours)
-    pieces = ['pawn', 'rook', 'knight', 'bishop', 'queen', 'king']
+    chess_pieces = ['pawn', 'rook', 'knight', 'bishop', 'queen', 'king']
    
     # list comprehension for practice :)
     # colourcoded_pieces = ['b' + item for item in pieces if item == 'king' or item == 'queen'] 
-   
-    # build black pieces
-    for item in pieces:
-        if item == 'kind' or item == 'queen':
-            colourcoded_pieces.append('b' + item)
-        elif item == 'rook' or item == 'knight' or item == 'bishop':
-            for i in range(1, 3): # use range to concatinate index i to items in elif statment b/c each player has 2x(rooks, knights, and bishops)
-                colourcoded_pieces.append('b' + item + str(i))
-        else: # colour code for pawns
-            for pawn in range(1, 9):
-                colourcoded_pieces.append('b' + item + str(pawn))
-    # build white pieces
-    for item in pieces:
-       if item == 'kind' or item == 'queen':
-            colourcoded_pieces.append('w' + item)
-        elif item == 'rook' or item == 'knight' or item == 'bishop':
-            for i in range(1, 3): #
-                colourcoded_pieces.append('w' + item + str(i))
-        else:
-            for pawn in range(1, 9):
-                colourcoded_pieces.append('w' + item + str(pawn)) 
-    
+    for piece in range(2):
+        if piece == 0:
+           # build black pieces
+            for item in chess_pieces:
+                if item == 'kind' or item == 'queen':
+                    colourcoded_pieces.append('b' + item)
+                elif item == 'rook' or item == 'knight' or item == 'bishop':
+                    for i in range(1, 3): # use range to concatinate index i to items in elif statment b/c each player has 2x(rooks, knights, and bishops)
+                        colourcoded_pieces.append('b' + item + str(i))
+                else: # colour code for pawns
+                    for pawn in range(1, 9):
+                        colourcoded_pieces.append('b' + item + str(pawn))
+            else:
+            # build white pieces
+                for item in chess_pieces:
+                    if item == 'kind' or item == 'queen':
+                        colourcoded_pieces.append('w' + item)
+                    elif item == 'rook' or item == 'knight' or item == 'bishop':
+                        for i in range(1, 3): #
+                            colourcoded_pieces.append('w' + item + str(i))
+                    else:
+                        for pawn in range(1, 9):
+                            colourcoded_pieces.append('w' + item + str(pawn)) 
+
     # adding chess pieces to chess_board_dict
-    for key, value in chess_board_dict.items():
-        chess_board_dict[key] = chess_board_dict[key,value]
+
 
 
     print(colourcoded_pieces)
