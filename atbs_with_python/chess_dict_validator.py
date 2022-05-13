@@ -37,7 +37,7 @@ def is_valid_chess_board():
     # colourcoded_pieces = ['b' + item for item in pieces if item == 'king' or item == 'queen'] 
     for piece in range(2):
         if piece == 0:
-           # build black pieces
+           # build black pieces and add to colorcoded_pieces list
             for item in chess_pieces:
                 if item == 'kind' or item == 'queen':
                     colourcoded_pieces.append('b' + item)
@@ -45,10 +45,10 @@ def is_valid_chess_board():
                     for i in range(1, 3): # use range to concatinate index i to items in elif statment b/c each player has 2x(rooks, knights, and bishops)
                         colourcoded_pieces.append('b' + item + str(i))
                 else: # colour code for pawns
-                    for pawn in range(1, 9):
-                        colourcoded_pieces.append('b' + item + str(pawn))
+                    for i in range(1, 9):
+                        colourcoded_pieces.append('b' + item + str(i))
         else:
-            # build white pieces
+            # build white pieces and add to colorcoded_pieces list
             for item in chess_pieces:
                 if item == 'kind' or item == 'queen':
                     colourcoded_pieces.append('w' + item)
@@ -56,8 +56,8 @@ def is_valid_chess_board():
                     for i in range(1, 3): #
                         colourcoded_pieces.append('w' + item + str(i))
                 else:
-                    for pawn in range(1, 9):
-                        colourcoded_pieces.append('w' + item + str(pawn)) 
+                    for i in range(1, 9):
+                        colourcoded_pieces.append('w' + item + str(i)) 
 
     # adding chess pieces to chess_board_dict
 
@@ -71,19 +71,19 @@ def is_valid_chess_board():
 # chess board represented in a dictionary  
 # expected output
 {'a1': ' ', 'b1': ' ', 'c1': ' ', 'd1': ' ', 'e1': ' ', 'f1': ' ', 'g1': ' ', 'h1': ' ',
-               'a2': ' ', 'b2': ' ', 'c2': ' ', 'd2': ' ', 'e2': ' ', 'f2': ' ', 'g2': ' ', 'h2': ' ',
-               'a3': ' ', 'b3': ' ', 'c3': ' ', 'd3': ' ', 'e3': ' ', 'f3': ' ', 'g3': ' ', 'h3': ' ',
-               'a4': ' ', 'b4': ' ', 'c4': ' ', 'd4': ' ', 'e4': ' ', 'f4': ' ', 'g4': ' ', 'h4': ' ',
-               'a5': ' ', 'b5': ' ', 'c5': ' ', 'd5': ' ', 'e5': ' ', 'f5': ' ', 'g5': ' ', 'h5': ' ',
-               'a6': ' ', 'b6': ' ', 'c6': ' ', 'd6': ' ', 'e6': ' ', 'f6': ' ', 'g6': ' ', 'h6': ' ',
-               'a7': ' ', 'b7': ' ', 'c7': ' ', 'd7': ' ', 'e7': ' ', 'f7': ' ', 'g7': ' ', 'h7': ' ',
-               'a8': ' ', 'b8': ' ', 'c8': ' ', 'd8': ' ', 'e8': ' ', 'f8': ' ', 'g8': ' ', 'h8': ' '}
+'a2': ' ', 'b2': ' ', 'c2': ' ', 'd2': ' ', 'e2': ' ', 'f2': ' ', 'g2': ' ', 'h2': ' ',
+'a3': ' ', 'b3': ' ', 'c3': ' ', 'd3': ' ', 'e3': ' ', 'f3': ' ', 'g3': ' ', 'h3': ' ',
+'a4': ' ', 'b4': ' ', 'c4': ' ', 'd4': ' ', 'e4': ' ', 'f4': ' ', 'g4': ' ', 'h4': ' ',
+'a5': ' ', 'b5': ' ', 'c5': ' ', 'd5': ' ', 'e5': ' ', 'f5': ' ', 'g5': ' ', 'h5': ' ',
+'a6': ' ', 'b6': ' ', 'c6': ' ', 'd6': ' ', 'e6': ' ', 'f6': ' ', 'g6': ' ', 'h6': ' ',
+'a7': ' ', 'b7': ' ', 'c7': ' ', 'd7': ' ', 'e7': ' ', 'f7': ' ', 'g7': ' ', 'h7': ' ',
+'a8': ' ', 'b8': ' ', 'c8': ' ', 'd8': ' ', 'e8': ' ', 'f8': ' ', 'g8': ' ', 'h8': ' '}
 # colourcoded_pieces
 # expect output
 ['bpawn1', 'bpawn2', 'bpawn3', 'bpawn4', 'bpawn5', 'bpawn6', 'bpawn7', 'bpawn8', 
-        'brook1', 'brook2', 'bknight1', 'bknight2', 'bbishop1', 'bbishop2', 'bqueen', 'bking', 
-        'wpawn1', 'wpawn2', 'wpawn3', 'wpawn4', 'wpawn5', 'wpawn6', 'wpawn7', 'wpawn8', 
-        'wrook1', 'wrook2', 'wknight1', 'wknight2', 'wbishop1', 'wbishop2', 'wqueen', 'wking']
+'brook1', 'brook2', 'bknight1', 'bknight2', 'bbishop1', 'bbishop2', 'bqueen', 'bking', 
+'wpawn1', 'wpawn2', 'wpawn3', 'wpawn4', 'wpawn5', 'wpawn6', 'wpawn7', 'wpawn8', 
+'wrook1', 'wrook2', 'wknight1', 'wknight2', 'wbishop1', 'wbishop2', 'wqueen', 'wking']
 '''               
 # building the chess board from it's constituent parts
 # coordinates that represent the chess board, 64 tiles
