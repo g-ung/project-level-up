@@ -11,13 +11,17 @@ by name of the pieces, i.e. 'pawn', 'knight', 'bishop' etc. eg. 'wpawn'
 def is_valid_chess_board():
     # create empty chess board to store key: coordinates, value: chess pieces
     chess_board_dict = {}
-
+    
+    board_xaxis = ('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h')
+    board_yaxis = (1, 2, 3, 4, 5, 6, 7, 8)
+    
     # Build the chess board
     chess_board_list = []
     for num in range(len(board_yaxis)):
         for char in range(len(board_xaxis)):
             chess_board_list.append(char + num)
-
+    # check with
+    # print(chess_board_list)
 
 # chess board represented in a dictionary
 chess_board = {'a1': ' ', 'b1': ' ', 'c1': ' ', 'd1': ' ', 'e1': ' ', 'f1': ' ', 'g1': ' ', 'h1': ' ',
