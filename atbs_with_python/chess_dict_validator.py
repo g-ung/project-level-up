@@ -25,7 +25,7 @@ def is_valid_chess_board():
             https://www.programiz.com/python-programming/methods/built-in/chr
             '''
             chess_board_list.append(chr(char) + str(num))
-            for tile_coord in chess_board_list:
+            for tile_coord in chess_board_list: # build chess_board_dict by adding chess_board_list to chess_board_dict
                 chess_board_dict[tile_coord] = chess_board_dict.get(tile_coord, ' ')
     # check with
     # return print(chess_board_list)
@@ -35,7 +35,7 @@ def is_valid_chess_board():
 '''
 # chess board represented in a dictionary
 # expected output
-chess_board = {'a1': ' ', 'b1': ' ', 'c1': ' ', 'd1': ' ', 'e1': ' ', 'f1': ' ', 'g1': ' ', 'h1': ' ',
+{'a1': ' ', 'b1': ' ', 'c1': ' ', 'd1': ' ', 'e1': ' ', 'f1': ' ', 'g1': ' ', 'h1': ' ',
                'a2': ' ', 'b2': ' ', 'c2': ' ', 'd2': ' ', 'e2': ' ', 'f2': ' ', 'g2': ' ', 'h2': ' ',
                'a3': ' ', 'b3': ' ', 'c3': ' ', 'd3': ' ', 'e3': ' ', 'f3': ' ', 'g3': ' ', 'h3': ' ',
                'a4': ' ', 'b4': ' ', 'c4': ' ', 'd4': ' ', 'e4': ' ', 'f4': ' ', 'g4': ' ', 'h4': ' ',
