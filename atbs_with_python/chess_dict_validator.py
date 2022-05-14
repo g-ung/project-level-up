@@ -26,7 +26,8 @@ def is_valid_chess_board():
             https://www.programiz.com/python-programming/methods/built-in/chr
             '''
             chess_board_list.append(chr(char) + str(num))
-            for tile_coord in chess_board_list: # use get() to build chess_board_dict
+            # use get() to build chess_board_dict, i.e. add chess_ board_list to chess_board_dict as dict. key
+            for tile_coord in chess_board_list:
                 chess_board_dict[tile_coord] = chess_board_dict.get(tile_coord, ' ')
     
     # build chess pieces by marryiing chess piece colours to chess piece set
@@ -59,13 +60,11 @@ def is_valid_chess_board():
                     for i in range(1, 9):
                         colourcoded_pieces.append('w' + item + str(i)) 
 
-    # adding chess pieces to chess_board_dict
-
-
-
-    print(colourcoded_pieces)
-    # check with
-    # return print(chess_board_list)
+   # adding chess pieces to chess_board_dict
+   
+   # return print(colourcoded_pieces)
+   # return print(chess_board_list)
+   # return print(chess_board_dict)
 
 '''
 # chess board represented in a dictionary  
