@@ -5,7 +5,7 @@ REQUIREMENTS:
 be on valid tile from '1a' to '8h'
 3 Pieces name begine with a 'w' or 'b' to represent white or black followed
 by name of the pieces, i.e. 'pawn', 'knight', 'bishop' etc. eg. 'wpawn'
-4. The funtion should detect when a bug has reulsted in an impropter chess board 
+4. The funtion should detect when a bug has resulted in an impropter chess board 
 '''
 
 def is_valid_chess_board():
@@ -39,7 +39,7 @@ def is_valid_chess_board():
         if piece == 0:
            # build black pieces and add to colorcoded_pieces list
             for item in chess_pieces:
-                if item == 'kind' or item == 'queen':
+                if item == 'king' or item == 'queen':
                     colourcoded_pieces.append('b' + item)
                 elif item == 'rook' or item == 'knight' or item == 'bishop':
                     for i in range(1, 3): # use range to concatinate index i to items in elif statment b/c each player has 2x(rooks, knights, and bishops)
@@ -50,10 +50,10 @@ def is_valid_chess_board():
         else:
             # build white pieces and add to colorcoded_pieces list
             for item in chess_pieces:
-                if item == 'kind' or item == 'queen':
+                if item == 'king' or item == 'queen':
                     colourcoded_pieces.append('w' + item)
                 elif item == 'rook' or item == 'knight' or item == 'bishop':
-                    for i in range(1, 3): #
+                    for i in range(1, 3): 
                         colourcoded_pieces.append('w' + item + str(i))
                 else:
                     for i in range(1, 9):
