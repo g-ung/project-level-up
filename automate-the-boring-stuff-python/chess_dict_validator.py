@@ -15,11 +15,11 @@ def is_valid_chess_board(user_input):
     chess_board_list = [] # empty chess board list to store coordinates
     
     # Building the chess board
-    for num in range(1, 9): # iterate to build board y-axis, numnbers
+    for num in range(1, 9): # iterate to build board y-axis, numbers
         for char in range(97, 105): # iterate to build board x-axis, letters
             '''
-            Took me AGES figure out how to do this section until I found this neat 
-            little built-in Pythong function. The range(97, 105) represent lower 
+            Took me to AGES figure out how to do this section until I found this neat 
+            little built-in Python function. The range(97, 105) represent lower 
             case characters in decimal, use ascii table to look up the key mappings. 
             Use chr() to convert decimal values to their corresponding string 
             characters to build board x-axis
@@ -81,13 +81,13 @@ def is_valid_chess_board(user_input):
 
     '''
     board_dict = zip_longest(chess_board_list, colourcoded_pieces, fillvalue = ' ')
-    chess_board_dict = dict(board_dict)
+    chess_board_dict = dict(board_dict) # use dict() constructor to build chess board dictionary
 
     # chess board and chess piece validation
     '''
     Create two variables to accept user input in the format 'bking a1' use split()
-    to segment key: 'bking' and value: 'a1' to check in chess_board_dict if the
-    chess pieces and tile position are valid
+    with [0] and [1] to segment key: 'bking' and value: 'a1' to check in 
+    chess_board_dict if the chess pieces and tile position are valid
     '''
     is_valid_chesspiece = user_input.split()[0]
     is_valid_tile = user_input.split()[1]
@@ -128,7 +128,7 @@ def is_valid_chess_board(user_input):
 '''           
 
 try:
-    attestation = input("Please enter a chess piece and tile position on chess board in format ['wking a1' or 'bpawn2 b2] (blank to quie): ")
+    attestation = input("Please enter a chess piece and tile position on chess board in format ['wking a1' or 'bpawn2 b2]: ")
 except IndexError as e:
     print("Error: Invalid input! {}".format(e))
 
