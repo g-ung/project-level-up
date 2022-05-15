@@ -74,8 +74,8 @@ def is_valid_chess_board():
 
     '''
     chess_board_dict = zip_longest(chess_board_list, colourcoded_pieces, fillvalue = ' ')
-    dict(chess_board_dict)
-
+    dict(chess_board_dict) # use dict() constructor to build dictionary from output of zip_longest
+    
     # check with
     # return print(colourcoded_pieces)
     # return print(chess_board_list)
