@@ -7,9 +7,10 @@ be on valid tile from '1a' to '8h'
 by name of the pieces, i.e. 'pawn', 'knight', 'bishop' etc. eg. 'wpawn'
 4. The funtion should detect when a bug has resulted in an impropter chess board 
 '''
+from itertools import zip_longest
 
 def is_valid_chess_board():
-    chess_board_dict = {} # create empty chess board to store key: coordinates, value: chess pieces
+    #chess_board_dict = {} # create empty chess board to store key: coordinates, value: chess pieces
     chess_board_list = [] # empty chess board list to store coordinates
     
     # Building the chess board
@@ -60,11 +61,25 @@ def is_valid_chess_board():
                     for i in range(1, 9):
                         colourcoded_pieces.append('w' + item + str(i)) 
 
-   # adding chess pieces to chess_board_dict
-    chess_board_dict = {x: colourcoded_pieces[i % len(colourcoded_pieces)] for i, x in enumerate(chess_board_list)} # this kinda works.....
-   # return print(colourcoded_pieces)
-   # return print(chess_board_list)
-    return print(chess_board_dict)
+    # add colourcoded_pieces and chess_board_list to chess_board_dict
+    '''
+    We want to combine two list of different lengths, colourcoded_pieces and chess_board_list 
+    to build the chess_board_dict. Use zip_longest() from the itertools module to combine the
+    two uneven lists.  The empty values will default to None, I used villfalue = ' ' to create
+    empty key-values pairs all chess pices have been exhausted from colouredcoded_pieces and 
+    empty key-value is created as place holder
+    REFERENCE:
+    https://docs.python.org/3/library/itertools.html?highlight=fillvalue
+    https://betterprogramming.pub/10-ways-to-convert-lists-to-dictionaries-in-python-d2c728d2aeb8
+
+    '''
+    chess_board_dict = zip_longest(chess_board_list, colourcoded_pieces, fillvalue = ' ')
+    dict(chess_board_dict)
+
+
+    # return print(colourcoded_pieces)
+    # return print(chess_board_list)
+    # return print(chess_board_dict)
 
 '''
 # chess board represented in a dictionary  
