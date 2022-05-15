@@ -82,7 +82,7 @@ def is_valid_chess_board():
     # check with
     # return print(colourcoded_pieces)
     # return print(chess_board_list)
-    return print(chess_board_dict)
+    # return print(chess_board_dict)
 
 '''
 # chess board represented in a dictionary  
