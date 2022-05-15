@@ -9,7 +9,8 @@ by name of the pieces, i.e. 'pawn', 'knight', 'bishop' etc. eg. 'wpawn'
 '''
 from itertools import zip_longest
 
-def is_valid_chess_board():
+
+def is_valid_chess_board(user_input):
     #chess_board_dict = {} # create empty chess board to store key: coordinates, value: chess pieces
     chess_board_list = [] # empty chess board list to store coordinates
     
@@ -76,8 +77,25 @@ def is_valid_chess_board():
     board_dict = zip_longest(chess_board_list, colourcoded_pieces, fillvalue = ' ')
     chess_board_dict = dict(board_dict)
 
-    # chess board validation
-    #chesspiece_validation = 
+    # chess board and chess piece validation
+    '''
+    Create two variables to accept user input in the format 'bking a1' use split()
+    to segment key: 'bking' and value: 'a1' to check in chess_board_dict if the
+    chess pieces and tile position are valid
+    '''
+    is_valid_chesspiece = user_input.split()[0]
+    is_valid_tile = user_input.split()[1]
+
+    # check if chess pieces and tile position are in chess_board_dict
+    if is_valid_tile in chess_board_dict:
+        if is_valid_chesspiece in chess_board_dict.values():
+            result = True
+        else:
+            result = False
+    else:
+        result = False
+    
+    return print(result)
 
     # check with
     # return print(colourcoded_pieces)
@@ -101,6 +119,11 @@ def is_valid_chess_board():
 'brook1', 'brook2', 'bknight1', 'bknight2', 'bbishop1', 'bbishop2', 'bqueen', 'bking', 
 'wpawn1', 'wpawn2', 'wpawn3', 'wpawn4', 'wpawn5', 'wpawn6', 'wpawn7', 'wpawn8', 
 'wrook1', 'wrook2', 'wknight1', 'wknight2', 'wbishop1', 'wbishop2', 'wqueen', 'wking']
-'''               
+'''           
 
-is_valid_chess_board()
+try:
+    attestation = input("Please enter a chess piece and tile position on chess board in format ['wking a1' or 'bpawn2 b2] (blank to quie): ")
+except:
+    print("Please enter chess piece and tile position in formate: 'wking a1")
+
+is_valid_chess_board(attestation)
