@@ -73,13 +73,16 @@ def is_valid_chess_board():
     https://betterprogramming.pub/10-ways-to-convert-lists-to-dictionaries-in-python-d2c728d2aeb8
 
     '''
-    chess_board_dict = zip_longest(chess_board_list, colourcoded_pieces, fillvalue = ' ')
-    dict(chess_board_dict)
+    board_dict = zip_longest(chess_board_list, colourcoded_pieces, fillvalue = ' ')
+    chess_board_dict = dict(board_dict)
+
+    # chess board validation
+    #chesspiece_validation = 
 
     # check with
     # return print(colourcoded_pieces)
     # return print(chess_board_list)
-    # return print(chess_board_dict)
+    return print(chess_board_dict)
 
 '''
 # chess board represented in a dictionary  
@@ -99,11 +102,5 @@ def is_valid_chess_board():
 'wpawn1', 'wpawn2', 'wpawn3', 'wpawn4', 'wpawn5', 'wpawn6', 'wpawn7', 'wpawn8', 
 'wrook1', 'wrook2', 'wknight1', 'wknight2', 'wbishop1', 'wbishop2', 'wqueen', 'wking']
 '''               
-# building the chess board from it's constituent parts
-# coordinates that represent the chess board, 64 tiles
-# board_xaxis = ('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h')
-# board_yaxis = (1, 2, 3, 4, 5, 6, 7, 8)
-# all possible peices, 61 pieces
-# pieces = ('pawn', 'rook', 'knight', 'bishop', 'queen', 'king')
-# piece_colour = ('b', 'w')
+
 is_valid_chess_board()
