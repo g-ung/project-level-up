@@ -18,20 +18,26 @@ def is_valid_chess_board(user_input):
     for num in range(1, 9): # iterate to build board y-axis, numnbers
         for char in range(97, 105): # iterate to build board x-axis, letters
             '''
-            Took me AGES to find this neat little built-in Pythong function.
-            The range(97, 105) represent lower case characters in decimal,
-            use ascii table to look up the key mappings. Use chr() to convert
-            decimal values to their corresponding string characters to
-            build board x-axis
+            Took me AGES figure out how to do this section until I found this neat 
+            little built-in Pythong function. The range(97, 105) represent lower 
+            case characters in decimal, use ascii table to look up the key mappings. 
+            Use chr() to convert decimal values to their corresponding string 
+            characters to build board x-axis
             REFERENCE:
             https://docs.python.org/3/library/functions.html?highlight=chr#chr
             https://www.programiz.com/python-programming/methods/built-in/chr
             '''
             chess_board_list.append(chr(char) + str(num))
+            '''
+            Had to pivot from this approach as I found it difficult to add values to
+            existing keys in chess_board_dict, to make things harder the value length 
+            is shorter than the existing keys in the dictionary.  I've commented the 
+            code out instead of removing it in case I couldn't find a another way to 
+            populate the chess_board_dict...  The rest is history :)
             # use get() to build chess_board_dict, i.e. add chess_ board_list to chess_board_dict as dict. key
-            #for tile_coord in chess_board_list:
-                #chess_board_dict[tile_coord] = chess_board_dict.get(tile_coord, ' ')
-    
+            # for tile_coord in chess_board_list: 
+                # chess_board_dict[tile_coord] = chess_board_dict.get(tile_coord, ' ')
+            '''
     # build chess pieces by marryiing chess piece colours to chess piece set
     colourcoded_pieces = [] # empty list to stored the completed chess pieces (with colours)
     chess_pieces = ['pawn', 'rook', 'knight', 'bishop', 'queen', 'king']
@@ -125,5 +131,5 @@ try:
     attestation = input("Please enter a chess piece and tile position on chess board in format ['wking a1' or 'bpawn2 b2] (blank to quie): ")
 except IndexError as e:
     print("Error: Invalid input! {}".format(e))
-    
+
 is_valid_chess_board(attestation)
