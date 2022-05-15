@@ -38,7 +38,7 @@ def is_valid_chess_board(user_input):
             # for tile_coord in chess_board_list: 
                 # chess_board_dict[tile_coord] = chess_board_dict.get(tile_coord, ' ')
             '''
-    # build chess pieces by marryiing chess piece colours to chess piece set
+    # build chess pieces by marrying chess piece colours to chess piece set
     colourcoded_pieces = [] # empty list to stored the completed chess pieces (with colours)
     chess_pieces = ['pawn', 'rook', 'knight', 'bishop', 'queen', 'king']
    
