@@ -128,7 +128,7 @@ def is_valid_chess_board(user_input):
 '''           
 
 try:
-    attestation = input("Please enter a chess piece and tile position on chess board in format ['wking a1' or 'bpawn2 b2]: ")
+    attestation = input("Please enter a chess piece and tile position on chess board in format ['wking a1' or 'bpawn2 b2']: ")
 except IndexError as e:
     print("Error: Invalid input! {}".format(e))
 
