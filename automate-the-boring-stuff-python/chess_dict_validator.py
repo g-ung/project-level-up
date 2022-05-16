@@ -3,14 +3,14 @@ REQUIREMENTS:
 1. Valid board must have exactly one black king and exactly one white king
 2. Each player can only have at most 16 pieces, 8 pawns, and all pieces must
 be on valid tile from '1a' to '8h'
-3 Pieces name begine with a 'w' or 'b' to represent white or black followed
+3 Pieces name begin with a 'w' or 'b' to represent white or black followed
 by name of the pieces, i.e. 'pawn', 'knight', 'bishop' etc. eg. 'wpawn'
 4. The funtion should detect when a bug has resulted in an impropter chess board 
 '''
 from itertools import zip_longest
 
 def is_valid_chess_board(user_input):
-    #chess_board_dict = {} # create empty chess board to store key: coordinates, value: chess pieces
+    # chess_board_dict = {} # create empty chess board to store key: coordinates, value: chess pieces
     chess_board_list = [] # empty chess board list to store coordinates
     
     # Building the chess board
@@ -29,13 +29,13 @@ def is_valid_chess_board(user_input):
             chess_board_list.append(chr(char) + str(num))
             '''
             Had to pivot from this approach as I found it difficult to add values to
-            existing keys in chess_board_dict, to make things harder the value length 
-            is shorter than the existing keys in the dictionary.  I've commented the 
-            code out instead of removing it in case I couldn't find a another way to 
+            existing keys in chess_board_dict, to make things harder the list of value 
+            length is shorter than the existing keys in the dictionary.  I've commented 
+            the code out instead of removing it in case I couldn't find a another way to 
             populate the chess_board_dict...  The rest is history :)
             # use get() to build chess_board_dict, i.e. add chess_ board_list to chess_board_dict as dict. key
             # for tile_coord in chess_board_list: 
-                # chess_board_dict[tile_coord] = chess_board_dict.get(tile_coord, ' ')
+                chess_board_dict[tile_coord] = chess_board_dict.get(tile_coord, ' ')
             '''
     # build chess pieces by marrying chess piece colours to chess piece set
     colourcoded_pieces = [] # empty list to stored the completed chess pieces (with colours)
@@ -72,7 +72,7 @@ def is_valid_chess_board(user_input):
     We want to combine two list of different lengths, colourcoded_pieces and chess_board_list 
     to build the chess_board_dict. Use zip_longest() from the itertools module to combine the
     two uneven lists.  The empty values will default to None, I used villfalue = ' ' to create
-    empty key-values pairs all chess pices have been exhausted from colouredcoded_pieces and 
+    empty key-values pairs when all chess pices have been exhausted from colouredcoded_pieces and 
     empty key-value is created as place holder
     REFERENCE:
     https://docs.python.org/3/library/itertools.html?highlight=fillvalue
@@ -85,8 +85,10 @@ def is_valid_chess_board(user_input):
     # chess board and chess piece validation
     '''
     Create two variables to accept user input in the format 'bking a1' use split()
-    with [0] and [1] to segment key: 'bking' and value: 'a1' to attestation in 
-    chess_board_dict if the chess pieces and tile position are valid
+    with [0] and [1] to segment key: 'bking' and value: 'a1' to check if the chess
+    piece and tile position is in chess_board_dict if the chess pieces and tile 
+    position are found in the chess board board dictionary it is valid returns True
+    else it is invalid and returns False
     '''
     is_valid_chesspiece = user_input.split()[0]
     is_valid_tile = user_input.split()[1]
@@ -127,7 +129,7 @@ def is_valid_chess_board(user_input):
 '''           
 
 try:
-    input_validation = input("Please enter a chess piece and tile position on chess board in format ['wking a1' or 'bpawn2 b2']: ")
+    input_validation = input("Please enter a chess piece name and tile position in format [e.g. 'wking a1' or 'bpawn2 b2']: ")
 except IndexError as e:
     print("Error: Invalid input! {}".format(e))
 
