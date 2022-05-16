@@ -8,8 +8,6 @@ by name of the pieces, i.e. 'pawn', 'knight', 'bishop' etc. eg. 'wpawn'
 4. The funtion should detect when a bug has resulted in an impropter chess board 
 '''
 from itertools import zip_longest
-from tabnanny import attestation
-
 
 def is_valid_chess_board(user_input):
     #chess_board_dict = {} # create empty chess board to store key: coordinates, value: chess pieces
@@ -104,7 +102,7 @@ def is_valid_chess_board(user_input):
     
     return print(result)
 
-    # attestation with
+    # check with
     # return print(colourcoded_pieces)
     # return print(chess_board_list)
     # return print(chess_board_dict)
