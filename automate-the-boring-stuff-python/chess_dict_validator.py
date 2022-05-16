@@ -8,6 +8,7 @@ by name of the pieces, i.e. 'pawn', 'knight', 'bishop' etc. eg. 'wpawn'
 4. The funtion should detect when a bug has resulted in an impropter chess board 
 '''
 from itertools import zip_longest
+from tabnanny import attestation
 
 
 def is_valid_chess_board(user_input):
@@ -86,13 +87,13 @@ def is_valid_chess_board(user_input):
     # chess board and chess piece validation
     '''
     Create two variables to accept user input in the format 'bking a1' use split()
-    with [0] and [1] to segment key: 'bking' and value: 'a1' to check in 
+    with [0] and [1] to segment key: 'bking' and value: 'a1' to attestation in 
     chess_board_dict if the chess pieces and tile position are valid
     '''
     is_valid_chesspiece = user_input.split()[0]
     is_valid_tile = user_input.split()[1]
 
-    # check if chess pieces and tile position are in chess_board_dict
+    # attestation if chess pieces and tile position are in chess_board_dict
     if is_valid_tile in chess_board_dict:
         if is_valid_chesspiece in chess_board_dict.values():
             result = True
@@ -103,7 +104,7 @@ def is_valid_chess_board(user_input):
     
     return print(result)
 
-    # check with
+    # attestation with
     # return print(colourcoded_pieces)
     # return print(chess_board_list)
     # return print(chess_board_dict)
@@ -128,8 +129,8 @@ def is_valid_chess_board(user_input):
 '''           
 
 try:
-    attestation = input("Please enter a chess piece and tile position on chess board in format ['wking a1' or 'bpawn2 b2']: ")
+    input_validation = input("Please enter a chess piece and tile position on chess board in format ['wking a1' or 'bpawn2 b2']: ")
 except IndexError as e:
     print("Error: Invalid input! {}".format(e))
 
-is_valid_chess_board(attestation)
+is_valid_chess_board(input_validation)
