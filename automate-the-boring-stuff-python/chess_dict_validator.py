@@ -4,7 +4,7 @@ REQUIREMENTS:
 2. Each player can only have at most 16 pieces, 8 pawns, and all pieces must
 be on valid tile from '1a' to '8h'
 3 Pieces name begin with a 'w' or 'b' to represent white or black followed
-by name of the pieces, i.e. 'pawn', 'knight', 'bishop' etc. eg. 'wpawn'
+by name of the pieces, i.e. 'pawn', 'knight', 'bishop' etc. e.g. 'wpawn'
 4. The funtion should detect when a bug has resulted in an impropter chess board 
 '''
 from itertools import zip_longest
@@ -69,11 +69,13 @@ def is_valid_chess_board(user_input):
 
     # add colourcoded_pieces and chess_board_list to chess_board_dict
     '''
-    We want to combine two list of different lengths, colourcoded_pieces and chess_board_list 
+    We want to combine two lists of different lengths, colourcoded_pieces and chess_board_list 
     to build the chess_board_dict. Use zip_longest() from the itertools module to combine the
-    two uneven lists.  The empty values will default to None, I used villfalue = ' ' to create
-    empty key-values pairs when all chess pices have been exhausted from colouredcoded_pieces and 
-    empty key-value is created as place holder
+    two uneven lists.  The empty values will default to None, I used fillfalue = ' ' to create
+    empty key-value pairs when all chess pices have been exhausted from colouredcoded_pieces and 
+    empty key-value are created as place holder, i.e. the rest of the chess_board_dict is
+    populated with empty values after the max no. of chess pieces, 32, were populated as key-value
+    pairs from the two lists
     REFERENCE:
     https://docs.python.org/3/library/itertools.html?highlight=fillvalue
     https://betterprogramming.pub/10-ways-to-convert-lists-to-dictionaries-in-python-d2c728d2aeb8
@@ -84,11 +86,11 @@ def is_valid_chess_board(user_input):
 
     # chess board and chess piece validation
     '''
-    Create two variables to accept user input in the format 'bking a1' use split()
-    with [0] and [1] to segment key: 'bking' and value: 'a1' to check if the chess
-    piece and tile position is in chess_board_dict if the chess pieces and tile 
-    position are found in the chess board board dictionary it is valid returns True
-    else it is invalid and returns False
+    Create two variables to accept and store user input in the format 'bking a1' 
+    use split() with [0] and [1] to segment key: 'bking' and value: 'a1' to check 
+    if the chess piece and tile position is in chess_board_dict if, the chess pieces 
+    and tile position are found in the chess board board dictionary it is valid and
+    returns True, else it is invalid and returns False
     '''
     is_valid_chesspiece = user_input.split()[0]
     is_valid_tile = user_input.split()[1]
