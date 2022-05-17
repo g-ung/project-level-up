@@ -1,1 +1,1 @@
-Solutions of some of the projects from the book Automate the <a href="https://automatetheboringstuff.com/">Boring Stuff with Python</a>, by Al Sweigart.
+Solutions to some of the projects from the book Automate the <a href="https://automatetheboringstuff.com/">Boring Stuff with Python</a>, by Al Sweigart.  I will eventually complete all of the exercises/projects as I progress through the book and add them here, so watch this pace.
