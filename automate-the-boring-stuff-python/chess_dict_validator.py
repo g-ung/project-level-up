@@ -1,4 +1,5 @@
 '''
+Chess Dictionary Validator
 REQUIREMENTS:
 1. Valid board must have exactly one black king and exactly one white king
 2. Each player can only have at most 16 pieces, 8 pawns, and all pieces must

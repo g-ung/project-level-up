@@ -1,11 +1,10 @@
 '''
 Fantasy Game Inventory
 REQUIREMENTS:
-1. Write a function named display_Inventory() that would take any possible "inventory"
-and display it like the following:
+1. Write a function named display_inventory() that would take any possible "inventory"
+and display it like the following format:
 
 Inventory:
-
 12 arrow
 42 gold coin
 1 rope
