@@ -98,7 +98,7 @@ def is_valid_chess_board(user_input):
     else:
         result = False
     
-    return print(result)
+    print(result)
 
     # check with
     # return print(colourcoded_pieces)

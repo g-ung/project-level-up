@@ -19,3 +19,11 @@ Total number of items: 48
 NOTE: The added_items list can contain multiples of the same item.
 '''
 def add_to_inventory(inventory, added_items):
+    for item in added_items:
+        inventory[item] = inventory.get(item, 0) + 1
+    
+current_inv = {'gold coin': 42, 'rope': 1}
+dragon_loot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby']
+
+current_inv = add_to_inventory(current_inv, dragon_loot)
+display_inventory(current_inv)
