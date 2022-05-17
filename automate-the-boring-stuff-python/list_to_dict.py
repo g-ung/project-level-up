@@ -44,6 +44,8 @@ def display_inventory(inventory):
         item_count += value # update item_count with value, int, in dictionary
         if value != 1:
             key = p.plural(key)
+        else:
+            key = p.singular_noun(key)
     
     print("Total number of items: {}".format(item_count))
 
