@@ -18,8 +18,9 @@ Total number of items: 48
 NOTE: The added_items list can contain multiples of the same item.
 You will need to include the function you wrote for the previous 
 program: fantasy_game_inventory.py in this script
-
 '''
+import inflect
+
 def add_to_inventory(inventory, added_items):
     for item in added_items: # dragon_loot argument parsed as a parameter to add_items then iterate through the list
         '''
@@ -41,9 +42,12 @@ def display_inventory(inventory):
     for key, value in inventory.items(): # use items() to iterate through inventory dictionary
         print("{} {}".format(value, key)) 
         item_count += value # update item_count with value, int, in dictionary
+        if value != 1:
+            key = p.plural(key)
     
     print("Total number of items: {}".format(item_count))
-    
+
+p = inflect.engine()    
 current_inv = {'gold coin': 42, 'rope': 1}
 dragon_loot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby']
 
