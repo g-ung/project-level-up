@@ -5,12 +5,15 @@ REQUIREMENTS:
 be on valid tile from '1a' to '8h'
 3 Pieces name begin with a 'w' or 'b' to represent white or black followed
 by name of the pieces, i.e. 'pawn', 'knight', 'bishop' etc. e.g. 'wpawn'
-4. The funtion should detect when a bug has resulted in an impropter chess board 
+4. The funtion should detect when a bug has resulted in an impropter chess board
+
+NOTE: This script is only conserned with validating whether a tile position and
+chess piece is valid or invalid.  It is not conserned with the rules of the game
+of chess
 '''
 from itertools import zip_longest
 
 def is_valid_chess_board(user_input):
-    # chess_board_dict = {} # create empty chess board to store key: coordinates, value: chess pieces
     chess_board_list = [] # empty chess board list to store coordinates
     
     # Building the chess board
@@ -27,16 +30,7 @@ def is_valid_chess_board(user_input):
             https://www.programiz.com/python-programming/methods/built-in/chr
             '''
             chess_board_list.append(chr(char) + str(num))
-            '''
-            Had to pivot from this approach as I found it difficult to add values to
-            existing keys in chess_board_dict, to make things harder the list of value 
-            length is shorter than the existing keys in the dictionary.  I've commented 
-            the code out instead of removing it in case I couldn't find a another way to 
-            populate the chess_board_dict...  The rest is history :)
-            # use get() to build chess_board_dict, i.e. add chess_ board_list to chess_board_dict as dict. key
-            # for tile_coord in chess_board_list: 
-                chess_board_dict[tile_coord] = chess_board_dict.get(tile_coord, ' ')
-            '''
+           
     # build chess pieces by marrying chess piece colours to chess piece set
     colourcoded_pieces = [] # empty list to stored the completed chess pieces (with colours)
     chess_pieces = ['pawn', 'rook', 'knight', 'bishop', 'queen', 'king']
@@ -110,25 +104,6 @@ def is_valid_chess_board(user_input):
     # return print(colourcoded_pieces)
     # return print(chess_board_list)
     # return print(chess_board_dict)
-
-'''
-# chess board represented in a dictionary  
-# expected output
-{'a1': ' ', 'b1': ' ', 'c1': ' ', 'd1': ' ', 'e1': ' ', 'f1': ' ', 'g1': ' ', 'h1': ' ',
-'a2': ' ', 'b2': ' ', 'c2': ' ', 'd2': ' ', 'e2': ' ', 'f2': ' ', 'g2': ' ', 'h2': ' ',
-'a3': ' ', 'b3': ' ', 'c3': ' ', 'd3': ' ', 'e3': ' ', 'f3': ' ', 'g3': ' ', 'h3': ' ',
-'a4': ' ', 'b4': ' ', 'c4': ' ', 'd4': ' ', 'e4': ' ', 'f4': ' ', 'g4': ' ', 'h4': ' ',
-'a5': ' ', 'b5': ' ', 'c5': ' ', 'd5': ' ', 'e5': ' ', 'f5': ' ', 'g5': ' ', 'h5': ' ',
-'a6': ' ', 'b6': ' ', 'c6': ' ', 'd6': ' ', 'e6': ' ', 'f6': ' ', 'g6': ' ', 'h6': ' ',
-'a7': ' ', 'b7': ' ', 'c7': ' ', 'd7': ' ', 'e7': ' ', 'f7': ' ', 'g7': ' ', 'h7': ' ',
-'a8': ' ', 'b8': ' ', 'c8': ' ', 'd8': ' ', 'e8': ' ', 'f8': ' ', 'g8': ' ', 'h8': ' '}
-# colourcoded_pieces
-# expect output
-['bpawn1', 'bpawn2', 'bpawn3', 'bpawn4', 'bpawn5', 'bpawn6', 'bpawn7', 'bpawn8', 
-'brook1', 'brook2', 'bknight1', 'bknight2', 'bbishop1', 'bbishop2', 'bqueen', 'bking', 
-'wpawn1', 'wpawn2', 'wpawn3', 'wpawn4', 'wpawn5', 'wpawn6', 'wpawn7', 'wpawn8', 
-'wrook1', 'wrook2', 'wknight1', 'wknight2', 'wbishop1', 'wbishop2', 'wqueen', 'wking']
-'''           
 
 try:
     input_validation = input("Please enter a chess piece name and tile position in format [e.g. 'wking a1' or 'bpawn2 b2']: ")
