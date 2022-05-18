@@ -37,9 +37,9 @@ For macOS/Linux
 #import inflect
 
 def add_to_inventory(inventory, added_items):
-    for item in added_items: # dragon_loot argument parsed as a parameter to add_items then iterate through the list
+    for item in added_items: # dragon_loot argument passed as a parameter to add_items then iterate through the list
         '''
-        If a key does not yet exist the inventory dictionary, arguement current_inv parsed as parameter
+        If a key does not yet exist the inventory dictionary, arguement current_inv passed as parameter
         to inventory, get() will return value 0 and inventory[item] is set to 1. When the iteration
         encounters another item that already exist in the dictionary the value of the key is 1++, i.e.
         the 2nd encounter of 'gold coin' key the value would be 1++ resulting in a count of 2
@@ -48,7 +48,7 @@ def add_to_inventory(inventory, added_items):
         '''
         inventory[item] = inventory.get(item, 0) + 1
     
-    return inventory # use explicity return statement to return inventory so it can be parsed to the function add_to_inventory
+    return inventory # use explicity return statement to return inventory so it can be passed to the function add_to_inventory
 
 def display_inventory(inventory):
     item_count = 0 # variable to store total number of items in iventory, i.e. the values in the dictionary
