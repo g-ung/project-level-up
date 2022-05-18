@@ -18,6 +18,20 @@ Total number of items: 48
 NOTE: The added_items list can contain multiples of the same item.
 You will need to include the function you wrote for the previous 
 program: fantasy_game_inventory.py in this script
+NOTE: If you want to install the inflect package I recommend you create
+a virtual environment then pip install the inflect package so it doesn't 
+mess with the built in libraries in Python.
+
+For macOS/Linux CLI: 
+>> python3 -m venv <venv name> # command to create your virtual environment
+>> source <venv name>\bin\activate # command to activate your virtual environment
+>> deactiveate # deactivate your virtual environment
+
+To delete your virtual environment simply delete the folder in Finder or 
+in terminal
+
+For macOS/Linux
+>> rm -rf <venv name> # command to delete your virtual environment
 '''
 #import inflect
 
@@ -42,6 +56,13 @@ def display_inventory(inventory):
     for key, value in inventory.items(): # use items() to iterate through inventory dictionary
         print("{} {}".format(value, key)) 
         item_count += value # update item_count with value, int, in dictionary
+        '''
+        Use plural string format fron inflect package to handle plural/singular
+        string format
+        REFERENCE:
+        https://pypi.org/project/inflect/
+        https://stackoverflow.com/questions/21872366/plural-string-formatting#21872861
+        '''
         #if value == 1:
         #    key = p.singular_noun(key, value)
         #else:
