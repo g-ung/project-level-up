@@ -18,6 +18,21 @@ Total number of items: 48
 NOTE: The added_items list can contain multiples of the same item.
 You will need to include the function you wrote for the previous 
 program: fantasy_game_inventory.py in this script
+
+NOTE: If you want to install the inflect package I recommend you create
+a virtual environment then pip install the inflect package so it doesn't 
+mess with the built in libraries in Python.
+
+For macOS/Linux CLI: 
+>> python3 -m venv <venv name> # command to create your virtual environment
+>> source <venv name>\bin\activate # command to activate your virtual environment
+>> deactivate # deactivate your virtual environment
+
+To delete your virtual environment simply delete the folder in Finder or 
+in terminal
+
+For macOS/Linux
+>> rm -rf <venv name> # command to delete your virtual environment
 '''
 #import inflect
 
