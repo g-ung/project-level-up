@@ -1,6 +1,5 @@
 #! python3
-# myclippy -- a multi-clipboard program
-
+# mclip.py -- a multi-clipboard program
 # dictionary to store you predefined message phrases
 import sys
 import pyperclip
