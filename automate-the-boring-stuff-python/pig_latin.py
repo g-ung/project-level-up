@@ -14,6 +14,7 @@ for word in message.split():
 
     '''
     prefix_non_letters = ''
+    
     while len(word) > 0 and not word[0].isalpha():
         '''
         use isalpha() in loop to determin if we should remove character from a word
