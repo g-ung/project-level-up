@@ -15,17 +15,15 @@ NOTE: Assum that all the innner lists will contain the same number of strings
 def print_table(table):
     col_widths = [0] * len(table) # create a list containing the same no. of 0 values as there are no. of inner lists in tabel_data
     
-    for list in table: 
+    for i, list in enumerate(table): 
         '''
-        Iterate through table to access the nested lists to find the longest string 
+        Iterate through table with enumerate to access the nested lists to find the longest string 
         and store that value to col_width[index]
         '''
-        index = 0
-        if len(list) > len(col_widths[index]):
-            col_widths[index] = len(list)
-            index += 1
-        for string in :
-            
+        for string in list:
+            longest_string = ''
+            if longest_string > col_widths[i]:
+                col_widths = longest_string 
 
     print(col_width)
 
