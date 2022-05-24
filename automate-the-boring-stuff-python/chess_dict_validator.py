@@ -102,9 +102,9 @@ def is_valid_chess_board(user_input):
     print(result)
 
     # check with
-    # return print(colourcoded_pieces)
-    # return print(chess_board_list)
-    # return print(chess_board_dict)
+    # print(colourcoded_pieces)
+    # print(chess_board_list)
+    # print(chess_board_dict)
 
 try:
     input_validation = input("Please enter a chess piece name and tile position in format [e.g. 'wking a1' or 'bpawn2 b2']: ")
