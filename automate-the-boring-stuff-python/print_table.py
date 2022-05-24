@@ -16,12 +16,18 @@ def print_table(table):
     col_widths = [0] * len(table) # create a list containing the same no. of 0 values as there are no. of inner lists in table_data
 
     transpose = list(zip(*table))
+    print(transpose)
     transpose = [list(sublist) for sublist in transpose]
-    transpose = [item for sublist in transpose for item in sublist]
-
-    list_to_string = ' '.join(transpose)
-    print(list_to_string)
-    #print(transpose[:3], transpose[3:6], transpose[6:9], transpose[9:])
+    print(transpose)
+    transpose = [' '.join([item for item in sublist]) for sublist in transpose]
+    
+    
+    # check with
+    # list_to_string = ' '.join(transpose)
+    # print(list_to_string)
+    # kinda works, should be able to do a loop to do this for me
+    print(transpose[0].rjust(10), "\n", transpose[1].rjust(10), "\n", transpose[2].rjust(10), "\n", transpose[3].rjust(10))
+    #print(transpose)
 
 
    
