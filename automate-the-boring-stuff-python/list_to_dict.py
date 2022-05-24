@@ -19,9 +19,10 @@ NOTE: The added_items list can contain multiples of the same item.
 You will need to include the function you wrote for the previous 
 program: fantasy_game_inventory.py in this script
 
-NOTE: If you want to install the inflect package I recommend you create
-a virtual environment then pip install the inflect package so it doesn't 
-mess with the built in libraries in Python.
+NOTE: The inflect package a third-party pacakage. If you want to 
+install the inflect package I recommend you create a virtual 
+environment then pip install the inflect package in the virtual 
+environment so it doesn't mess with the built in libraries in Python.
 
 For macOS/Linux CLI: 
 >> python3 -m venv <venv name> # command to create your virtual environment
