@@ -1,3 +1,11 @@
+'''
+Coin Flip Streaks
+REQUIREMENTS:
+1. Generate a list of randomly selected 'heads and 'tails' values
+2. Check if there is a streak of six 'heads' or 'tails' in it
+3. Put the code in a loop that repeats 10,000 times (this is the sample size)
+4. Calculate the percentage of coin flips that contain a streak of six heads or tails
+'''
 import random
 
 num_of_streaks = 0
