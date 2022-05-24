@@ -26,12 +26,7 @@ def print_table(table):
     # list_to_string = ' '.join(transpose)
     # print(list_to_string)
     # kinda works, should be able to do a loop to do this for me
-    print(transpose[0].rjust(10), "\n", transpose[1].rjust(10), "\n", transpose[2].rjust(10), "\n", transpose[3].rjust(10))
-    #print(transpose)
-
-
-   
-    # check with
+    # print(transpose[0].rjust(10), "\n", transpose[1].rjust(10), "\n", transpose[2].rjust(10), "\n", transpose[3].rjust(10))
     # print(transpose)
 
 table_data = [['apples', 'oranges', 'cherries', 'banana'], 
