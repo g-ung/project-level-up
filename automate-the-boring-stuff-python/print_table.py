@@ -34,8 +34,9 @@ def print_table(table):
     
     # transpose the nested list and print the table
     for i in zip(*table):
+        #print(i)
         transposed_list = list(i)
-        print(transposed_list[0].rjust(col_widths[x_axis]), transposed_list[1].rjust(col_widths[x_axis]), transposed_list[2].rjust(col_widths[x_axis]))
+        print(transposed_list[0].rjust(8), transposed_list[1].rjust(5), transposed_list[2].rjust(5)) # NOTE: this works but not eloquent, will refactor this later
         #print(transposed_list)
 
     
