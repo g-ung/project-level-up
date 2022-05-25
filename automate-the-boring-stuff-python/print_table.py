@@ -16,11 +16,15 @@ def print_table(table):
     col_widths = [0] * len(table) # create a list containing the same no. of 0 values as there are no. of inner lists in table_data
 
     # find the longest string in nested list table (table_data)
-    for i in range(len(table)): # iterate through table as range(len(table)) to access the nested list as indexes
-        for j in table[i]: # iterate through table index, i.e. each word/string, to find the longest string by length
-            if col_widths[i] < len(j):
-                col_widths[i] = len(j)
-    print(table)
+    for list in table:
+        longest_string = ''
+        for string in list:
+            if len(string) > len(longest_string):
+                longest_string = string
+    
+    for x in zip(*table):
+        print(' '.join(x).rjust(len(longest_string)), end= ' ')
+        print()
 
 table_data = [['apples', 'oranges', 'cherries', 'banana'], 
               ['Alice', 'Bob', 'Carol', 'David'],
