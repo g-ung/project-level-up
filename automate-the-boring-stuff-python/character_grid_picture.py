@@ -33,8 +33,8 @@ grid = [['.', '.', '.', '.', '.', '.'],
 transposed = zip(*grid) # use zip to transpose grid
 
 # for loop approach to transpose x, y axis
-for y_axis in range(len(grid[0])):
-    for x_axis in grid:
+for y_axis in range(len(grid[0])): # prints the number of items in grid[0], i.e. the first list
+    for x_axis in grid: # prints the number of lists in grid
         print(x_axis[y_axis], end='')
     print()
 
