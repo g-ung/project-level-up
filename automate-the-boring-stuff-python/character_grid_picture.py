@@ -30,8 +30,6 @@ grid = [['.', '.', '.', '.', '.', '.'],
 
 # grid[0][0] == top left hand corner of the grid, i.e. grid[x_axis][y_axis]
 '''
-transposed = zip(*grid) # use zip to transpose grid
-
 # for loop approach to transpose x, y axis
 for y_axis in range(len(grid[0])): # prints the number of items in grid[0], i.e. the first list
     for x_axis in grid: # prints the number of lists in grid

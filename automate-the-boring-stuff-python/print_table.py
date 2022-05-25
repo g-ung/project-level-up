@@ -16,14 +16,13 @@ def print_table(table):
     col_widths = [0] * len(table) # create a list containing the same no. of 0 values as there are no. of inner lists in table_data
 
     # find the longest string in nested list table (table_data)
-    for list in table:
-        longest_string = ''
-        for string in list:
-            if len(string) > len(longest_string):
-                longest_string = string
+    for i in range(len(table)):
+        for j in table[i]:
+            if len(j) > len(i):
+                col_widths[i] = len(i)
     
     for x in zip(*table):
-        print(' '.join(x).rjust(len(longest_string)), end= ' ')
+        print(' '.join(x).rjust(len(col_widths)), end= ' ')
         print()
 
 table_data = [['apples', 'oranges', 'cherries', 'banana'], 
