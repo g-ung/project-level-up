@@ -30,20 +30,24 @@ def print_table(table):
             if col_widths[x_axis] < len(y_axis): 
                 col_widths[x_axis] = len(y_axis)
                 # check with
-                # print(col_widths)
+                # print(col_widths[x_axis])
     
     # transpose the nested list and print the table
-    for i in zip(*table):
-        #print(i)
-        transposed_list = list(i)
-        print(transposed_list[0].rjust(8), transposed_list[1].rjust(5), transposed_list[2].rjust(5)) # NOTE: this works but not eloquent, will refactor this later
-        #print(transposed_list)
+    for i in range(len(table[0])):
+        # print(i)
+        for j in range(len(table)):
+            # print(j)
+            print(table[j][i].rjust(col_widths[j]), end=' ') # print table with rjust() proportionate to the longest word in each col_widths
+        print()
+        i += 1
 
-    
-
-
-        
-
+    # for i in zip(*table):
+        # print(i)
+        # transposed_list = list(i)
+        # NOTE: This prints the correct format but technically wrong, logical error
+        # print(transposed_list[0].rjust(8), transposed_list[1].rjust(5), transposed_list[2].rjust(5))
+        # print(transposed_list)
+  
 table_data = [['apples', 'oranges', 'cherries', 'banana'], 
               ['Alice', 'Bob', 'Carol', 'David'],
               ['dogs', 'cats', 'moose', 'goose']]
