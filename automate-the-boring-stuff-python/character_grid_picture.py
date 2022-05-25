@@ -28,4 +28,20 @@ grid = [['.', '.', '.', '.', '.', '.'],
         ['.', 'O', 'O', '.', '.', '.'],
         ['.', '.', '.', '.', '.', '.']]
 
+# grid[0][0] == top left hand corner of the grid, i.e. grid[x_axis][y_axis]
+'''
+transposed = zip(*grid) # use zip to transpose grid
+
+# for loop approach to transpose x, y axis
+for y_axis in range(len(grid[0])):
+    for x_axis in grid:
+        print(x_axis[y_axis], end='')
+    print()
+
+# zip approach to reduce to single for loop
+for x_axis in zip(*grid):
+    print(''.join(x_axis)) # use join() to convert list to string
+'''
+# list comprehension approach with join() to convert grid value to string
+print('\n'.join(''.join(x_axis) for x_axis in zip(*grid)))
 
