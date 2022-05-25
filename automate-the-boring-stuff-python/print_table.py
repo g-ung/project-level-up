@@ -22,7 +22,6 @@ def print_table(table):
         for y_axis in table[x_axis]: # iterate through the first list, index 0, of table to access the list in position 0
             # check with
             # print(j)
-            
             '''
             Compare the length of the item (string) in col_widths in index x_axis with 
             the item (string) in the first list in table.  If col_widths[x_axis] < len(y_axis)
@@ -32,7 +31,18 @@ def print_table(table):
                 col_widths[x_axis] = len(y_axis)
                 # check with
                 # print(col_widths)
+    
+    # transpose the nested list and print the table
+    for i in zip(*table):
+        transposed_list = list(i)
+        print(transposed_list[0].rjust(col_widths[x_axis]), transposed_list[1].rjust(col_widths[x_axis]), transposed_list[2].rjust(col_widths[x_axis]))
+        #print(transposed_list)
+
+    
+
+
         
+
 table_data = [['apples', 'oranges', 'cherries', 'banana'], 
               ['Alice', 'Bob', 'Carol', 'David'],
               ['dogs', 'cats', 'moose', 'goose']]
