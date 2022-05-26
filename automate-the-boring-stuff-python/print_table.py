@@ -33,15 +33,6 @@ def print_table(table):
                 # print(col_widths[x_axis])
     
     # transpose the nested list and print the table
-    '''
-    for i in range(len(table[0])): # not a fan of this method
-        # print(i)
-        for j in range(len(table)):
-            # print(j)
-            print(table[j][i].rjust(col_widths[j]), end=' ') # print table with rjust() proportionate to the longest word in each col_widths
-        print()
-        i += 1
-    '''
     for i in zip(*table):
         # print(i)
         transposed_list = list(i)
