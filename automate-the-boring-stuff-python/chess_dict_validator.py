@@ -106,9 +106,13 @@ def is_valid_chess_board(user_input):
     # print(chess_board_list)
     # print(chess_board_dict)
 
-try:
-    input_validation = input("Please enter a chess piece name and tile position in format [e.g. 'wking a1' or 'bpawn2 b2']: ")
-except IndexError as e:
-    print("Error: Invalid input! {}".format(e))
+def main():
+    try:
+        input_validation = input("Please enter a chess piece name and tile position in format [e.g. 'wking a1' or 'bpawn2 b2']: ")
+    except IndexError as e:
+        print("Error: Invalid input! {}".format(e))
 
-is_valid_chess_board(input_validation)
+    is_valid_chess_board(input_validation)
+
+if __name__ == '__main__':
+    main()
