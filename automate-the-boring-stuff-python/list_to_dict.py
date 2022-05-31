@@ -65,9 +65,13 @@ def display_inventory(inventory):
            
     print("Total number of items: {}".format(item_count))
 
-#p = inflect.engine()    
-current_inv = {'gold coin': 42, 'rope': 1}
-dragon_loot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby']
+def main():
+    #p = inflect.engine()    
+    current_inv = {'gold coin': 42, 'rope': 1}
+    dragon_loot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby']
 
-current_inv = add_to_inventory(current_inv, dragon_loot)
-display_inventory(current_inv)
+    current_inv = add_to_inventory(current_inv, dragon_loot)
+    display_inventory(current_inv)
+
+if __name__ == '__main__':
+    main()
