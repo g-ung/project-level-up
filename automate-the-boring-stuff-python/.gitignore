@@ -1,0 +1,14 @@
+# OS generated files #
+######################
+.DS_Store
+
+# Log files #
+#############
+*.pyc
+
+# Folders #
+###########
+
+# venv #
+########
+.env
