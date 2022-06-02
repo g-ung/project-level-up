@@ -4,10 +4,15 @@
 
 # Log files #
 #############
-*.pyc
 
-# Folders #
+
+# Byte-compiled #
+################
+__pycache__
+*.pyc
 
 # venv #
 ########
 .env
+.venv
+venv/
