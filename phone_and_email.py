@@ -1,18 +1,27 @@
 #! python 3
-# Phone Number and Email Address Extractor
-# Finds phone numbers and email address on the clipboard
+'''
+Phone Number and Email Address Extractor
+Finds phone numbers and email address on the clipboard
+Uses pyperclip package not part of standard Python library
+Install with (Liniux\macOS) terminal command: pip3 install pyperclip
+
+How to Use this Script
+1. Select the text, Linux\macOS: COMMAND-A (Win: CTRL-A) 
+2. Copy the text, Linux\macOS: COMMAND-C (Win: CTRL-C)
+3. Run the script phone_and_email.py
+'''
 import pyperclip, re
 
 def main():
     # phone number regex
     phone_regex = re.compile(r'''(
-        (\+\d{2})?                      # country code
-        (\d{1,2}|\(\d{1,2}\))?          # area code
+        (\+\d{2})?                      # country code, optional
+        (\d{1,2}|\(\d{1,2}\))?          # area code, eg. 03 or (03), optional
         (\s|-|\.)?                      # seperator
         (\d{4})                         # first 3 digits
         (\s|-|\.)                       # seperator
         (\d{4})                         # last 4 digits
-        (\s*(ext|x|ext.)\s*(\d{2,5}))?  # extension, between two and five digits
+        (\s*(ext|x|ext.)\s*(\d{2,5}))?  # extension, between two and five digits, optional
         )''', re.VERBOSE)
 
     # email address regex, this regex won't match all possible email address, but will match any typical email address
@@ -23,14 +32,14 @@ def main():
         (\.[a-zA-Z]{2,4})       # dot-something, between two and four letters
         )''', re.VERBOSE)
 
-    # find matches in clipboard text
+    # us pyperclip() find matches copied to clipboard text
     text = str(pyperclip.paste())
     matches = [] # empty list to store mataches
     
     for groups in phone_regex.findall((text)):
-        phone_num = ' '.join([groups[1], groups[2], groups[4], groups[6], groups[7]]) # groups are country code, area code, first four digits, last four digits, and extension
+        phone_num = ' '.join([groups[1], groups[2], groups[4], groups[6]]) # groups are country code, area code, first four digits, last four digits
         if groups[8] != '':
-            phone_num += ' x' + groups[8]
+            phone_num += ' x' + groups[9]
         matches.append(groups[0])
     for groups in email_regex.findall(text):
         matches.append(groups[0])
