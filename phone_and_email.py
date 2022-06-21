@@ -32,7 +32,7 @@ def main():
         (\.[a-zA-Z]{2,4})       # dot-something, between two and four letters
         )''', re.VERBOSE)
 
-    # us pyperclip() find matches copied to clipboard text
+    # use pyperclip() to find matches copied to clipboard text
     text = str(pyperclip.paste())
     matches = [] # empty list to store mataches
     
