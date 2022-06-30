@@ -38,7 +38,7 @@ def main():
     
     for groups in phone_regex.findall((text)): # use findall() to return a phone numbers and email address in a list of tuples; one tuple for each match
         phone_num = ' '.join([groups[1], groups[2], groups[4], groups[6]]) # groups are country code, area code, first four digits, last four digits
-        if groups[8] != '':
+        if groups[9] != '':
             phone_num += ' x' + groups[9]
         matches.append(groups[0])
     for groups in email_regex.findall(text):
