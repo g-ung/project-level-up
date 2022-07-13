@@ -16,9 +16,9 @@ def main():
     # phone number regex
     phone_regex = re.compile(r'''(
         (\W\d{2})?                      # country code, optional
-        (\s|-|\.)?                      # seperator
+        (\s|-|\.)?                      # separator
         (\d{1,2}|\(\d{1,2}\))?          # area code, eg. 03 or (03), optional
-        (\s|-|\.)?                      # seperator
+        (\s|-|\.)?                      # separator
         (\d{4})                         # first 4 digits
         (\s|-|\.)                       # seperator
         (\d{4})                         # last 4 digits
