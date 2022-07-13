@@ -15,7 +15,8 @@ import pyperclip, re
 def main():
     # phone number regex
     phone_regex = re.compile(r'''(
-        (\W|\d{2})?                     # country code, optional
+        (\W\d{2})?                      # country code, optional
+        (\s|-|\.)?                      # seperator
         (\d{1,2}|\(\d{1,2}\))?          # area code, eg. 03 or (03), optional
         (\s|-|\.)?                      # seperator
         (\d{4})                         # first 4 digits
@@ -37,9 +38,9 @@ def main():
     matches = [] # empty list to store mataches
     
     for groups in phone_regex.findall((text)): # use findall() to return a phone numbers and email address in a list of tuples; one tuple for each match
-        phone_num = ' '.join([groups[1], groups[2], groups[4], groups[6]]) # groups are country code, area code, first four digits, last four digits
-        if groups[9] != '':
-            phone_num += ' x' + groups[9]
+        phone_num = ' '.join([groups[1], groups[3], groups[5], groups[7]]) # groups are country code, area code, first four digits, last four digits
+        if groups[10] != '':
+            phone_num += ' x' + groups[10]
         matches.append(groups[0])
     for groups in email_regex.findall(text):
         matches.append(groups[0])
