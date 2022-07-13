@@ -15,10 +15,10 @@ import pyperclip, re
 def main():
     # phone number regex
     phone_regex = re.compile(r'''(
-        (\+\d{2})?                      # country code, optional
+        (\W|\d{2})?                     # country code, optional
         (\d{1,2}|\(\d{1,2}\))?          # area code, eg. 03 or (03), optional
         (\s|-|\.)?                      # seperator
-        (\d{4})                         # first 3 digits
+        (\d{4})                         # first 4 digits
         (\s|-|\.)                       # seperator
         (\d{4})                         # last 4 digits
         (\s*(ext|x|ext.)\s*(\d{2,5}))?  # extension, between two and five digits, optional
