@@ -23,17 +23,7 @@ def main():
             )''', re.VERBOSE)
         
         # use findall() to match intl. date regex pattern in file
-        for groups in intl_date_regex.findall(content):
-            convert_date = '-'.join([groups[5], groups[3], groups[1]])
-            if groups[6] != '':
-                convert_date += groups[6]
-            matches.append(groups[0])
-    
-        if len(matches) > 0:
-            print("Dates found and converted:")
-            print('\n'.join(matches))
-        else:
-            print("No dates fround")
+        
 
 if __name__ == '__main__':
     main()
