@@ -54,7 +54,7 @@ def main():
             phone_num += ' x' + groups[9]
         matches.append(groups[0])
 
-    for group in phone_nospace_regex.findall(text): # find phone numbers with no paces
+    for group in phone_nospace_regex.findall(text): # find phone numbers with no spaces
         phone_numnospace = '-'.join([group[1], group[3], group[4], group[7]]) # groups are country code, area code, block of 8 digits (phone no. with no spaces)
         if group[8] != '':
             phone_numnospace += ' x' + group[8]
