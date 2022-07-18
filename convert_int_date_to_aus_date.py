@@ -15,11 +15,11 @@ def main():
 
         # international date regex
         intl_date_regex = re.compile(r'''(
-            (^\d{4})                            # year in YYYY format
+            ^(\d{4})                            # year in YYYY format
             (\/|-|\.)                           # separator
             (\d{2}(0[1-9]|1[0-2]))              # month in MM format
             (\/|-|\.)                           # separator
-            (\d{2}(0[1-9]|[12][0-9]|3[01])$)    # day in DD format
+            (\d{2}(0[1-9]|[12][0-9]|3[01]))$    # day in DD format
             )''', re.VERBOSE)
         
         # use findall() to match intl. date regex pattern in file
