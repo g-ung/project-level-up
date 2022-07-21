@@ -34,10 +34,10 @@ def main():
         #mo2 = iso_date_basic.findall("This is an iso date variants: 2022/07/19, 2022-07-20, 2022/7/3, 20220808, 202296")
         #print(mo2)
 
-        mo3 = iso_date_regex.findall(content)
-        print(mo3)
-        mo4 = iso_date_basic.findall(content)
-        print(mo4)
+        #mo3 = iso_date_regex.findall(content)
+        #print(mo3)
+        #mo4 = iso_date_basic.findall(content)
+        #print(mo4)
 
 
 if __name__ == '__main__':
