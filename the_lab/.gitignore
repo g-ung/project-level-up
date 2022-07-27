@@ -1,0 +1,18 @@
+# OS generated files #
+######################
+.DS_Store
+
+# Log files #
+#############
+
+
+# Byte-compiled #
+################
+__pycache__/
+*.pyc
+
+# venv #
+########
+.env
+.venv
+venv/
