@@ -2,16 +2,21 @@
 '''
 Convert Mac Address Format
 Convert mac address wtih dashes ("-") and capital letters
-to lower case letters and colon (":")
+to lower case letters and colon (":").  
+This scrip will read from from an input text file, use for 
+loop to process the mac address from current format to desired
+mac address format
 '''
 def main():
     mac_address = [] # empty list to store mac addresses from file
 
-    input_file = "/Users/gabe_ung/Desktop/mac_addresses.txt"
+    # read mac addresses from input file
+    input_file = "/Users/gabe_ung/Desktop/mac_addresses.txt" # enter the path to your file here
     with open(input_file, 'r') as in_f:
         for line in in_f.readlines():
             mac_address.append(line)
 
+    # convert mac addresses to desired format, MM-MM-MM-SS-SS-SS to MM:MM:MM:SS:SS:SS
     # replace "-" with ":"
     mac_no_dash = [] # empty list to store new mac addresses with dash removed
     for mac in mac_address:
@@ -30,6 +35,7 @@ def main():
         mac_lowercase = mac.lower() # conver to lowercase, edit this to suit your desired mac address format
         desired_mac_format.append(mac_lowercase)
 
+    # write new mac address format to new text file
     output_file = "/Users/gabe_ung/Desktop/mac_address_standardise.txt"
     with open(output_file, 'w') as out_f:
         for i in desired_mac_format:
