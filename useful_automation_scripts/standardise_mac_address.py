@@ -1,10 +1,7 @@
 #! python 3
 '''
 Convert Mac Address Format
-Convert current mac address format (":", "-" or ".") and capital 
-(lowercase) letters to desired format.  
-
-This script will read from from an input text file, use for 
+This script will read from an input text file, use for 
 loops to process the mac address from current format to desired
 mac address format
 '''
