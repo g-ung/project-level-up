@@ -7,9 +7,8 @@ ISO 8601/US date pattern, then converts them to
 DD/MM/YYYY or DD/MM/YY format
 '''
 
-import re, fileinput
+import re
 from datetime import datetime
-
 
 def main():
     # place holder for .txt/.CSV file
@@ -33,38 +32,16 @@ def main():
             '%m/%d/%y': us_dt_dash_yy,
             '%Y%m%d': iso_dt_basic
             }
-    dates = [] # empty list to store dates read from file
     input_file = "/Users/gabe_ung/Desktop/dates.txt"
     output_file = "/Users/gabe_ung/Desktop/converted_dates.txt"
     with open(input_file, 'r') as in_f, open(output_file, 'w') as out_f:
         for line in in_f.readlines():
-            dates.append(line.strip())
-        
-        
-        iso_dt_slash = re.compile(r'^\s*\d{4}\/\d{1,2}\/\d{1,2}\s*$')
-        iso_dt_dash = re.compile(r'^\s*\d{2,4}-\d{1,2}-\d{1,2}\s*$')
-        iso_dt_basic = re.compile(r'^\s*\d{4}\d{1,2}\d{1,2}\s*$')
-        us_dt_slash = re.compile(r'^\s*\d{1,2}\/\d{1,2}\/\d{4}\s*$')
-        us_dt_dash = re.compile(r'^\s*\d{1,2}-\d{1,2}-\d{4}\s*$')
-        us_dt_slash_yy = re.compile(r'^\s*\d{1,2}\/\d{1,2}\/\d{2}\s*$')
-        us_dt_dash_yy = re.compile(r'^\s*\d{1,2}\/\d{1,2}\/\d{2}\s*$')
+            line = line.strip()
 
-        desired_dt_format = '%d/%m/%Y'
-
-        patterns = {
-                '%Y/%m/%d': iso_dt_slash,
-                '%Y-%m-%d': iso_dt_dash,
-                '%m/%d/%Y': us_dt_slash,
-                '%m-%d-%Y': us_dt_dash,
-                '%m-%d-%y': us_dt_slash_yy,
-                '%m/%d/%y': us_dt_dash_yy,
-                '%Y%m%d': iso_dt_basic
-                }
         for dt_format, pattern in patterns.items():
             dt_obj = None
-            if re.match(pattern, dates):                
-                dt_obj = datetime.strptime(dates, dt_format)
-        
+            if re.match(pattern, line):                
+                dt_obj = datetime.strptime(line, dt_format)
         out_f.write(dt_obj.strftime(desired_dt_format) + '\n')
     
 
