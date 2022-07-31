@@ -11,8 +11,7 @@ import re
 from datetime import datetime
 
 def main():
-    # place holder for .txt/.CSV file
-    #test_dates = ['2022/07/18', '2022-07-19', '2022/7/18', '2022.7.18', '20220803', '20210603', '202292', '2022903', '2022-07-21T02:10:46Z', '07/01/22', '08/01/2022', '08-21-2021']
+    # date regex
     iso_dt_slash = re.compile(r'^\s*\d{4}\/\d{1,2}\/\d{1,2}\s*$')
     iso_dt_dash = re.compile(r'^\s*\d{2,4}-\d{1,2}-\d{1,2}\s*$')
     iso_dt_basic = re.compile(r'^\s*\d{4}\d{1,2}\d{1,2}\s*$')
@@ -33,7 +32,7 @@ def main():
             '%Y%m%d': iso_dt_basic
             }
     '''
-    
+    # date match and write to output file
     input_file = "/Users/gabe_ung/Desktop/dates.txt"
     output_file = "/Users/gabe_ung/Desktop/converted_dates.txt"
     with open(input_file, 'r') as in_f, open(output_file, 'w') as out_f:
@@ -55,15 +54,14 @@ def main():
                 dt_obj = datetime.strptime(line, '%Y%m%d')
             out_f.write(dt_obj.strftime(desired_dt_format) + '\n')
 
-
-'''
+        '''
         try:
             if re.match(pattern, input):                
                 return "CONVERTED", datetime.strptime(input, dt_format).strftime(desired_dt_format)
         except Exception as e:
             return "EXCEPTION", datetime.now().replace(microsecond=0, second=0, minute=0, hour=0)
         return "NOT CONVERTED", datetime.now().replace(microsecond=0, second=0, minute=0, hour=0)
-'''
+        '''
     
     #dt = datetime.strptime('2022/12/21', '%Y/%m/%d').strftime(desired_dt_format)
     #print(dt)
