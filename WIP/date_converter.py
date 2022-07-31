@@ -22,7 +22,7 @@ def main():
     us_dt_dash_yy = re.compile(r'^\s*\d{1,2}\/\d{1,2}\/\d{2}\s*$')
 
     desired_dt_format = '%d/%m/%Y'
-
+    '''
     patterns = {
             '%Y/%m/%d': iso_dt_slash,
             '%Y-%m-%d': iso_dt_dash,
@@ -32,44 +32,31 @@ def main():
             '%m/%d/%y': us_dt_dash_yy,
             '%Y%m%d': iso_dt_basic
             }
+    '''
+    
     input_file = "/Users/gabe_ung/Desktop/dates.txt"
     output_file = "/Users/gabe_ung/Desktop/converted_dates.txt"
     with open(input_file, 'r') as in_f, open(output_file, 'w') as out_f:
         for line in in_f.readlines():
             line = line.strip()
-
-        for dt_format, pattern in patterns.items():
-            dt_obj = None
-            if re.match(pattern, line):                
-                dt_obj = datetime.strptime(line, dt_format)
-        out_f.write(dt_obj.strftime(desired_dt_format) + '\n')
-    
-
-
+            if re.match(iso_dt_slash, line):
+                dt_obj = datetime.strptime(line, '%Y/%m/%d')
+            elif re.match(iso_dt_dash, line):
+                dt_obj = datetime.strptime(line, '%Y-%m-%d')
+            elif re.match(us_dt_slash, line):
+                dt_obj = datetime.strptime(line, '%m/%d/%Y')
+            elif re.match(us_dt_dash, line):
+                dt_obj = datetime.strptime(line, '%m-%d-%Y')
+            elif re.match(us_dt_slash_yy,line):
+                dt_obj = datetime.strptime(line, '%m/%d/%y')
+            elif re.match(us_dt_dash_yy, line):
+                dt_obj = datetime.strptime(line, '%m-%d-%y')
+            elif re.match(iso_dt_basic, line):
+                dt_obj = datetime.strptime(line, '%Y%m%d')
+            out_f.write(dt_obj.strftime(desired_dt_format) + '\n')
 
 
 '''
-def date_convert(input):
-    iso_dt_slash = re.compile(r'^\s*\d{4}\/\d{1,2}\/\d{1,2}\s*$')
-    iso_dt_dash = re.compile(r'^\s*\d{2,4}-\d{1,2}-\d{1,2}\s*$')
-    iso_dt_basic = re.compile(r'^\s*\d{4}\d{1,2}\d{1,2}\s*$')
-    us_dt_slash = re.compile(r'^\s*\d{1,2}\/\d{1,2}\/\d{4}\s*$')
-    us_dt_dash = re.compile(r'^\s*\d{1,2}-\d{1,2}-\d{4}\s*$')
-    us_dt_slash_yy = re.compile(r'^\s*\d{1,2}\/\d{1,2}\/\d{2}\s*$')
-    us_dt_dash_yy = re.compile(r'^\s*\d{1,2}\/\d{1,2}\/\d{2}\s*$')
-
-    desired_dt_format = '%d/%m/%Y'
-
-    patterns = {
-            '%Y/%m/%d': iso_dt_slash,
-            '%Y-%m-%d': iso_dt_dash,
-            '%m/%d/%Y': us_dt_slash,
-            '%m-%d-%Y': us_dt_dash,
-            '%m-%d-%y': us_dt_slash_yy,
-            '%m/%d/%y': us_dt_dash_yy,
-            '%Y%m%d': iso_dt_basic
-            }
-    for dt_format, pattern in patterns.items():
         try:
             if re.match(pattern, input):                
                 return "CONVERTED", datetime.strptime(input, dt_format).strftime(desired_dt_format)
