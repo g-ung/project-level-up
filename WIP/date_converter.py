@@ -18,7 +18,7 @@ def main():
     us_dt_slash = re.compile(r'^\s*\d{1,2}\/\d{1,2}\/\d{4}\s*$')
     us_dt_dash = re.compile(r'^\s*\d{1,2}-\d{1,2}-\d{4}\s*$')
     us_dt_slash_yy = re.compile(r'^\s*\d{1,2}\/\d{1,2}\/\d{2}\s*$')
-    us_dt_dash_yy = re.compile(r'^\s*\d{1,2}\/\d{1,2}\/\d{2}\s*$')
+    us_dt_dash_yy = re.compile(r'^\s*\d{1,2}-\d{1,2}-\d{2}\s*$')
 
     desired_dt_format = '%d/%m/%Y'
     '''
