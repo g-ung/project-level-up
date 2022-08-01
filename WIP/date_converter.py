@@ -4,7 +4,10 @@ Convert ISO 8601 and US Date Format to DD-MM-YYYY
 
 Use regular expressions to find date that are in 
 ISO 8601/US date pattern, then converts them to 
-DD/MM/YYYY or DD/MM/YY format
+DD/MM/YYYY or DD/MM/YY format.
+
+This script does not work with date format mm-dd-yy
+need to change "-" to "/".  Will find a fix for it soon.
 '''
 
 import re
@@ -20,7 +23,7 @@ def main():
     us_dt_slash_yy = re.compile(r'^\s*\d{1,2}\/\d{1,2}\/\d{2}\s*$')
     us_dt_dash_yy = re.compile(r'^\s*\d{1,2}-\d{1,2}-\d{2}\s*$')
 
-    desired_dt_format = '%d/%m/%Y'
+    desired_dt_format = '%d-%m-%Y'
     '''
     patterns = {
             '%Y/%m/%d': iso_dt_slash,
@@ -54,16 +57,5 @@ def main():
                 dt_obj = datetime.strptime(line, '%Y%m%d')
             out_f.write(dt_obj.strftime(desired_dt_format) + '\n')
 
-        '''
-        try:
-            if re.match(pattern, input):                
-                return "CONVERTED", datetime.strptime(input, dt_format).strftime(desired_dt_format)
-        except Exception as e:
-            return "EXCEPTION", datetime.now().replace(microsecond=0, second=0, minute=0, hour=0)
-        return "NOT CONVERTED", datetime.now().replace(microsecond=0, second=0, minute=0, hour=0)
-        '''
-    
-    #dt = datetime.strptime('2022/12/21', '%Y/%m/%d').strftime(desired_dt_format)
-    #print(dt)
 if __name__ == '__main__':
     main()
