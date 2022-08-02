@@ -1,9 +1,12 @@
 #! python3
-# mclip.py -- a multi-clipboard program
-# dictionary to store you predefined message phrases
+'''
+A Multi-Clipboard Program
+Use dictionary to store you predefined message phrases
+'''
 import sys
 import pyperclip
 
+def main():
 TEXT = {'agree': """Yes, I agree. That sounds fine to me.""", 'busy': """Sorry, can we do this later this week or next week?""",
         'upsell': """Would you consider making this a monthly donation?"""}
 
@@ -24,3 +27,6 @@ if keyphrase in TEXT: # checks if the keyphrase exist in TEXT dict.
     print("Text for {} copied to clipboard".format(keyphrase))
 else:
     print("There is no text for {}".format(keyphrase)) # if the key phrase does not exist print messaing saying no key phrase with that name
+
+if __name__ == '__main__':
+    main()
