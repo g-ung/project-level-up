@@ -1,8 +1,13 @@
 #! python3
-# bullet_point_adder.py -- adds Wikipedia bullet points to the start
-# of each line of text on the clipboard
+'''
+Bullet Point Adder
+Adds Wikipedia bullet points to the start
+of each line of text on the clipboard
+'''
+
 import pyperclip
 
+def main():
 text = pyperclip.paste() # variable to store list of text
 
 # Seperating list of text into lines and add asterix
@@ -14,3 +19,6 @@ for i in range(len(lines)): # iterate thruough all indext in the 'lines' list
 text = '\n'.join(lines) # use join() to join the line  at '\n'
 
 pyperclip.copy(text)
+
+if __name__ == '__main__':
+    main()
