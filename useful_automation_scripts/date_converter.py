@@ -33,8 +33,8 @@ def main():
             }
     '''
     # date match and write to output file
-    input_file = "/Users/gabe_ung/Desktop/dates.txt"
-    output_file = "/Users/gabe_ung/Desktop/converted_dates.txt"
+    input_file = "dates.txt"
+    output_file = "converted_dates.txt"
     with open(input_file, 'r') as in_f, open(output_file, 'w') as out_f:
         for line in in_f.readlines():
             line = line.strip()
