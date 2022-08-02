@@ -5,9 +5,6 @@ Convert ISO 8601 and US Date Format to DD-MM-YYYY
 Use regular expressions to find date that are in 
 ISO 8601/US date pattern, then converts them to 
 DD/MM/YYYY or DD/MM/YY format.
-
-This script does not work with date format mm-dd-yy
-need to change "-" to "/".  Will find a fix for it soon.
 '''
 
 import re
@@ -16,7 +13,7 @@ from datetime import datetime
 def main():
     # date regex
     iso_dt_slash = re.compile(r'^\s*\d{4}\/\d{1,2}\/\d{1,2}\s*$')
-    iso_dt_dash = re.compile(r'^\s*\d{2,4}-\d{1,2}-\d{1,2}\s*$')
+    iso_dt_dash = re.compile(r'^\s*\d{4}-\d{1,2}-\d{1,2}\s*$')
     iso_dt_basic = re.compile(r'^\s*\d{4}\d{1,2}\d{1,2}\s*$')
     us_dt_slash = re.compile(r'^\s*\d{1,2}\/\d{1,2}\/\d{4}\s*$')
     us_dt_dash = re.compile(r'^\s*\d{1,2}-\d{1,2}-\d{4}\s*$')
