@@ -1,10 +1,9 @@
 #! python 3
 '''
 Convert ISO 8601 and US Date Format to DD-MM-YYYY
-
-Use regular expressions to find date that are in 
-ISO 8601/US date pattern, then converts them to 
-DD/MM/YYYY or DD/MM/YY format.
+Use regular expressions to matc dates that are in 
+ISO 8601/US date format, then converts them to 
+DD/MM/YYYY format.
 '''
 
 import re
