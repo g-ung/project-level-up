@@ -29,28 +29,25 @@ Days
 excpt for century divisble by 100
 1-28 all months
 '''
-
 import re
 
-def main():
-    # test dates, ph for user input dates
-    sample_dates = ['21/03/2000', '31/02/2020', '29/02/2000', '3/06/2021', '29/02/2001', '56/3/1999', '4/09/1000', '4/9/2999', '4/09/999'] 
-    
-    # date regex pattern for dd/mm/yyy
+def date_validator(input_date):
+    # date regex pattern for dd/mm/yyy, this regex does not do any date validation
     dt_pattern = re.compile(r'''(
-            (\d{1,2})             # day 01-31
-            /                     # separator
-            (\d{1,2})             # month 01-12
-            /                     # separator
-            ([12]\d{3})           # year 1000-2999
+            (\d{1,2})           # day 01-31 or 1-31, will accept invalid days e.g. 51
+            [/-]                # separator
+            (\d{1,2})           # month 01-12 or 1-12
+            [/-]                # separator
+            ([12]\d{3})         # year 1000-2999
             )''', re.VERBOSE)
-    # test
-    for date in sample_dates:
-        if re.match(dt_pattern, date):
-            print("Format match: {}".format(date))
-        else:
-            print("Format not match: {}".format(date))
-    '''
+    
+    # date validation
+    dt_validation = dt_pattern.match(input_date)
+
+    # date variables
+    # months with 30 days
+    months_30 = [4, 6, 9, 11]
+    
     # is a leap year
     century % 4 == 0
     century % 400 == 0
@@ -61,15 +58,34 @@ def main():
     days == 29
     days not range(1,31)
     
-    # months with 30 days
-    months = [4, 6, 9, 11]
-    '''
+    if dt_validation == None:
+        print("No date entry detected")
+    else:
+        for day, month, century in dt_validation: # date validation check
+            day = int(day)
+            month = int(month)
+            century = int(century)
+            # validate months with 30 days
+            if month in months_30: 
+                if day == 31:
+                    print("Invalid date: {} is not a valid date!".format(input_date))
+            elif month == 2:
 
 
+                print("Format match: {}".format(date))
+            else:
+                print("Format not match: {}".format(date))
+    
+    
+    
 
+def main():
+    try: 
+        user_input = input("Please enter date in DD/MM?YYY: ")
+    except ValueError as e:
+        print("Error: Invalid input! {}, date not in valid format: DD/MM/YYY.  Please try again: ".format(e))
 
-        
-
+    date_validator(user_input)    
 
 if __name__ == '__main__':
     main()
