@@ -15,12 +15,15 @@ Assumptions:
 NOTE:
 The regular expression doesn't have to detect for leap year;
 it will accept nonexistent dates like 31/02/2020 or 31/04/2021.
+i.e. the regex does not do any date validation.
+
+Write additional code to validate correct dates.
 
 If a day or month is a single digit it'll have a leading zero.
 
 Days
 31 for Jan, Mar, May, Jul, Aug, Oct, Dec
-30 for Jan, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec
+30 for Apr, Jun, Sep, Nov
 29-30 for Jan, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov Dec
 29 for Feb in leap year, divisible by 4 and divisible by 400,
 excpt for century divisble by 100
@@ -35,11 +38,11 @@ def main():
     
     # date regex pattern for dd/mm/yyy
     dt_pattern = re.compile(r'''(
-            (^\s*\d{2})               # day 01-31
-            (\/)                      # separator
-            (\d{2})                   # month 01-12
-            (\/)                      # separator
-            ([12]\d{3}\s*$)           # year 1000-2999
+            (\d{1,2})             # day 01-31
+            /                     # separator
+            (\d{1,2})             # month 01-12
+            /                     # separator
+            ([12]\d{3})           # year 1000-2999
             )''', re.VERBOSE)
     # test
     for date in sample_dates:
@@ -47,10 +50,20 @@ def main():
             print("Format match: {}".format(date))
         else:
             print("Format not match: {}".format(date))
-
+    '''
     # is a leap year
+    century % 4 == 0
+    century % 400 == 0
+    century % 100 != 0
     
+    # feb is a leap year
+    feb == 2
+    days == 29
+    days not range(1,31)
     
+    # months with 30 days
+    months = [4, 6, 9, 11]
+    '''
 
 
 
