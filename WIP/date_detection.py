@@ -25,67 +25,54 @@ Days
 31 for Jan, Mar, May, Jul, Aug, Oct, Dec
 30 for Apr, Jun, Sep, Nov
 29-30 for Jan, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov Dec
-29 for Feb in leap year, divisible by 4 and divisible by 400,
-excpt for century divisble by 100
 1-28 all months
+
+29 for Feb in leap year, divisible by 4 and divisible by 400,
+excpt for century divisble by 100:
+century % 4 == 0
+century % 400 == 0
+century % 100 != 0
 '''
 import re
 
 def date_validator(input_date):
     # date regex pattern for dd/mm/yyy, this regex does not do any date validation
     dt_pattern = re.compile(r'''(
-            (\d{1,2})           # day 01-31 or 1-31, will accept invalid days e.g. 51
-            [/-]                # separator
-            (\d{1,2})           # month 01-12 or 1-12
-            [/-]                # separator
+            (\d{1,2})           # day, will accept invalid days e.g. 51/03/2000
+            /                   # separator
+            (\d{1,2})           # month
+            /                   # separator
             ([12]\d{3})         # year 1000-2999
             )''', re.VERBOSE)
     
-    # date validation
-    dt_validation = dt_pattern.match(input_date)
+    # date matching
+    dt_validation = dt_pattern.findall(input_date)
 
     # date variables
     # months with 30 days
     months_30 = [4, 6, 9, 11]
     
-    # is a leap year
-    century % 4 == 0
-    century % 400 == 0
-    century % 100 != 0
-    
-    # feb is a leap year
-    feb == 2
-    days == 29
-    days not range(1,31)
-    
-    if dt_validation == None:
-        print("No date entry detected")
-    else:
-        for day, month, century in dt_validation: # date validation check
-            day = int(day)
-            month = int(month)
-            century = int(century)
-            # validate months with 30 days
-            if month in months_30: 
-                if day == 31:
-                    print("Invalid date: {} is not a valid date!".format(input_date))
-            elif month == 2:
-
-
-                print("Format match: {}".format(date))
-            else:
-                print("Format not match: {}".format(date))
-    
-    
-    
+    for groups in dt_validation: # date validation check
+        # validate months with 30 days
+        '''
+        Use membership operator 'in' validate months with 30 days
+        REFERENCE:
+        https://www.programiz.com/python-programming/operators
+        '''
+        if groups[3] in months_30 and groups[1] == 31: 
+            print("Valid. {} is a valid date!".format(input_date))
+        # validate leap year
+        elif groups[3] == 2 and groups[1] == 29:
+            # define condition for a leap year
+            if (groups[5] % 4 == 0 and groups[5] % 100 != 0) or (groups[5] % 400 == 0 and groups[5] % 100 != 0):
+               print("Valid. {} is a valid date!".format(input_date))
+        elif groups[3] not in months_30 and groups[1] <= 31: # check months with 31 days
+            print("Valid. {} is a valid date!".format(input_date))
+        else:
+            print("Valid. {} is a valid date!".format(input_date))
 
 def main():
-    try: 
-        user_input = input("Please enter date in DD/MM?YYY: ")
-    except ValueError as e:
-        print("Error: Invalid input! {}, date not in valid format: DD/MM/YYY.  Please try again: ".format(e))
-
-    date_validator(user_input)    
+    date_validator(input("Please enter date in DD/MM/YYYY: "))
 
 if __name__ == '__main__':
     main()
