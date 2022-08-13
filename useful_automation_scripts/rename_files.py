@@ -1,9 +1,8 @@
 #! python 3
 '''
-Reformat and Rename File Name
-Edit the lines of code as required to reformat current
-file name to format of new file name
-
+Rename File Names
+Edit the block of code inside the for loop
+to format file name to your requirements.
 '''
 import os
 
@@ -29,7 +28,7 @@ def main():
         # new name format
         new_name = '{}-{}-{}{}'.format(file_num, file_title, file_body, file_ext)
 
-        os.rename(file, new_name) # rename file according the name format, line 22
+        os.rename(file, new_name) # rename file according new_name format
 
 if __name__ == '__main__':
     main()
