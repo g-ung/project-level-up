@@ -37,7 +37,8 @@ import re
 
 def date_validator(input_date):
     # date regex pattern for dd/mm/yyyy
-    dt_pattern = re.compile(r'([12][0-9]|3[0-1]|0?[1-9])/(1[0-2]|0?[1-9])/([12]\d{3})')
+    dt_pattern = re.compile(r'(0[1-9]|[1-2]\d|3[01])/(0[1-9]|1[012])/([12]\d{3})')
+    #[12][0-9]|3[0-1]|0?[1-9])/(1[0-2]|0?[1-9])/([12]\d{3}
      
     # date matching
     dt_validation = dt_pattern.findall(input_date)
