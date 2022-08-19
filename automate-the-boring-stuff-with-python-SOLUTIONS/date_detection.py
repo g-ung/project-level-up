@@ -24,11 +24,11 @@ If a day or month is a single digit it'll have a leading zero.
 Days
 31 for Jan, Mar, May, Jul, Aug, Oct, Dec
 30 for Apr, Jun, Sep, Nov
-29-30 for Jan, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov Dec
+29-30 for Jan, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec
 1-28 all months
 
 29 for Feb in leap year, divisible by 4 and divisible by 400,
-excpt for century divisble by 100:
+except for century divisble by 100:
 century % 4 == 0
 century % 400 == 0
 century % 100 != 0
@@ -44,7 +44,6 @@ def date_validator(input_date):
 
     # months with 30 & 31 days
     months_30 = [4, 6, 9, 11]
-    month_31 = [2, 4, 6, 9, 11]
     for day, month, century in dt_validation: # date validation check
         # validate months with 30 and 31 days
         '''
@@ -55,8 +54,10 @@ def date_validator(input_date):
         day = int(day)
         month = int(month)
         century = int(century)
-        if month in months_30 and day < 31 or (month not in month_31):
-            print("Valid. {} is a valid date!".format(input_date)) 
+        if month in months_30 and day < 31:
+            print("Valid. {} is a valid date!".format(input_date))
+        elif month not in months_30 and day <= 31 and month != 2:
+            print("Valid. {} is a valid date!".format(input_date))
         # validate leap year
         elif month == 2 and day == 29 and century % 4 == 0 and (century % 100 != 0 or century % 400 == 0) or (month == 2 and day < 29):
             print("Valid. {} is a valid date!".format(input_date))
