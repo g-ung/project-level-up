@@ -36,13 +36,13 @@ century % 100 != 0
 import re
 
 def date_validator(input_date):
-    # date regex pattern for dd/mm/yyyy, this regex does not do any date validation as per requirements
+    # date regex pattern for dd/mm/yyyy
     dt_pattern = re.compile(r'([12][0-9]|3[0-1]|0?[1-9])/(1[0-2]|0?[1-9])/([12]\d{3})')
      
     # date matching
     dt_validation = dt_pattern.findall(input_date)
 
-    # months with 30 & 31 days
+    # months with 30 days
     months_30 = [4, 6, 9, 11]
     for day, month, century in dt_validation: # date validation check
         # validate months with 30 and 31 days
@@ -58,7 +58,7 @@ def date_validator(input_date):
             print("Valid. {} is a valid date!".format(input_date))
         elif month not in months_30 and day <= 31 and month != 2:
             print("Valid. {} is a valid date!".format(input_date))
-        # validate leap year
+        # validate leap year and feb
         elif month == 2 and day == 29 and century % 4 == 0 and (century % 100 != 0 or century % 400 == 0) or (month == 2 and day < 29):
             print("Valid. {} is a valid date!".format(input_date))
         else:
