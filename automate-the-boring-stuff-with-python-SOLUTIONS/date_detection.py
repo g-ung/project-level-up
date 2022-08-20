@@ -38,33 +38,34 @@ import re
 def date_validator(input_date):
     # date regex pattern for dd/mm/yyyy
     dt_pattern = re.compile(r'(0[1-9]|[1-2]\d|3[01])/(0[1-9]|1[012])/([12]\d{3})')
-    #[12][0-9]|3[0-1]|0?[1-9])/(1[0-2]|0?[1-9])/([12]\d{3}
-     
+
     # date matching
     dt_validation = dt_pattern.findall(input_date)
-
-    # months with 30 days
-    months_30 = [4, 6, 9, 11]
-    for day, month, century in dt_validation: # date validation check
-        # validate months with 30 and 31 days
-        '''
-        Use membership operator 'in' and 'not in' validate months with 30 & 31 days
-        REFERENCE:
-        https://www.programiz.com/python-programming/operators
-        '''
-        day = int(day)
-        month = int(month)
-        century = int(century)
-        if month in months_30 and day < 31:
-            print("Valid. {} is a valid date!".format(input_date))
-        elif month not in months_30 and day <= 31 and month != 2:
-            print("Valid. {} is a valid date!".format(input_date))
-        # validate leap year and feb
-        elif month == 2 and day == 29 and century % 4 == 0 and (century % 100 != 0 or century % 400 == 0) or (month == 2 and day < 29):
-            print("Valid. {} is a valid date!".format(input_date))
-        else:
-            print("Invalid. {} is not a valid date!".format(input_date))
-            
+    if len(dt_validation) == 0:
+        print("Invalid. {} is not a valid date!".format(input_date))
+    else:
+        # months with 30 days
+        months_30 = [4, 6, 9, 11]
+        for day, month, century in dt_validation: # date validation check
+            # validate months with 30 and 31 days
+            '''
+            Use membership operator 'in' and 'not in' validate months with 30 & 31 days
+            REFERENCE:
+            https://www.programiz.com/python-programming/operators
+            '''
+            day = int(day)
+            month = int(month)
+            century = int(century)
+            if month in months_30 and day < 31: # months with 30 days
+                print("Valid. {} is a valid date!".format(input_date))
+            elif month not in months_30 and day <= 31 and month != 2: # months with 31 days
+                print("Valid. {} is a valid date!".format(input_date))
+            # validate leap year and feb
+            elif month == 2 and day == 29 and century % 4 == 0 and (century % 100 != 0 or century % 400 == 0) or (month == 2 and day < 29):
+                print("Valid. {} is a valid date!".format(input_date))
+            else:
+                print("Invalid. {} is not a valid date!".format(input_date))
+                
 def main():
     date_validator(input("Please enter date in DD/MM/YYYY: "))
 
