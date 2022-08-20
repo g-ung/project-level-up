@@ -41,6 +41,7 @@ def date_validator(input_date):
 
     # date matching
     dt_validation = dt_pattern.findall(input_date)
+    
     if len(dt_validation) == 0:
         print("Invalid. {} is not a valid date!".format(input_date))
     else:
