@@ -42,10 +42,10 @@ def date_validator(input_date):
     # date matching
     dt_validation = dt_pattern.findall(input_date)
     
-    if len(dt_validation) == 0:
+    if len(dt_validation) == 0: # catch any invalid date that doesn't make the regex pattern
         print("Invalid. {} is not a valid date!".format(input_date))
     else:
-        # months with 30 days
+        # list to store months with 30 days, used to validate months with 30 & 31 days
         months_30 = [4, 6, 9, 11]
         for day, month, century in dt_validation: # date validation check
             # validate months with 30 and 31 days
