@@ -6,5 +6,5 @@ I may, from time to time, refactor some of the code in this repository as I gain
 | :-------: | :-------- | :-------------------- |
 | 03        | Funtions  | The Collatz Sequence  |
 | 04        | Lists     | Comma Code
-|           |           | Coin Flip Streaks
-|           |           | Character Picture Grid
+                          Coin Flip Streaks
+                          Character Picture Grid
