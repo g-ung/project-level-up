@@ -2,9 +2,3 @@ Solutions to some of the projects from the book <a href="https://automatethebori
 
 I may, from time to time, refactor some of the code in this repository as I gain more knowledge and experiece with Python.
 
-| Chapter   | Title     | Practice Project
-| :-------: | :-------- | :-------------------- |
-| 03        | <a href="[https://automatetheboringstuff.com/2e/chapter3/Funtions](https://github.com/g-ung/project-level-up/tree/main/automate-the-boring-stuff-with-python-SOLUTIONS/Chapter_3)](https://github.com/g-ung/project-level-up/tree/main/automate-the-boring-stuff-with-python-SOLUTIONS/Chapter_3)">Functions</a>  | <a href="[https://github.com/g-ung/project-level-up/tree/main/automate-the-boring-stuff-with-python-SOLUTIONS/Chapter_3](https://github.com/g-ung/project-level-up/blob/main/automate-the-boring-stuff-with-python-SOLUTIONS/Chapter_3/collatz.py)">The Collatz Sequence</a>  |
-| 04        | Lists     | Comma Code
-                          Coin Flip Streaks
-                          Character Picture Grid
