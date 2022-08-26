@@ -9,7 +9,7 @@ REQUIREMENTS
 2. Contain at least one uppercase 
 3. Contains at lease one lowercase character
 4. Contains at least one digit
-5. Contains at lease one special character
+5. Contains at lease one special character (additona required added by me)
 
 '''
 import re
