@@ -23,20 +23,21 @@ def pwd_evaulator(password):
     https://automatetheboringstuff.com/2e/chapter7/
     '''
     is_strong_pwd = re.compile(r'''(
-            ^(?=.*[a-z])    # match lowercase chars, 0 or more
-            (?=.*[A-Z0])    # match uppercase chars, 0 or more
-            (?=.*[0-9])     # match digit
-            .{8,}$          # match at least 8 chars
+            ^(?=.*[a-z])        # match lowercase chars, 0 or more
+            (?=.*[A-Z])         # match uppercase chars, 0 or more
+            (?=.*[0-9])         # match digit
+            (?=.*[!@#$%^&*+])   # symbols
+            .{8,}$              # match at least 8 chars
             )''', re.VERBOSE)
     
-    pwd_evaluation = is_strong_pwd.search(password)
+    pwd_evaluation = is_strong_pwd.fullmatch(password)
 
     if pwd_evaluation != None:
         return True
 
 def main():
     check_pwd = pwd_evaulator(input("Please enter your password: "))
-
+    
     if check_pwd == True:
         print("Your password meets the password requirement, password is: STRONG")
     else:
