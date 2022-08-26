@@ -8,7 +8,8 @@ REQUIREMENTS
 1. Has at least eight characters
 2. Contain at least one uppercase 
 3. Contains at lease one lowercase character
-3. Contains least one digit
+4. Contains at least one digit
+5. Contains at lease one special character
 
 '''
 import re
@@ -25,14 +26,14 @@ def pwd_evaulator(password):
     is_strong_pwd = re.compile(r'''(
             ^(?=.*[a-z])        # match lowercase chars, 0 or more
             (?=.*[A-Z])         # match uppercase chars, 0 or more
-            (?=.*[0-9])         # match digit
-            (?=.*[!@#$%^&*+])   # symbols
+            (?=.*[0-9])         # match digit, 0 or more
+            (?=.*[!@#$%^&*+])   # special character, 0 or more
             .{8,}$              # match at least 8 chars
             )''', re.VERBOSE)
     
     pwd_evaluation = is_strong_pwd.fullmatch(password)
-
-    if pwd_evaluation != None:
+    
+    if pwd_evaluation: 
         return True
 
 def main():
