@@ -37,7 +37,7 @@ def pwd_evaulator(password):
         return True
 
 def main():
-    print("Please enter your password. Password word must be at least eight charaters long. Have uppercase and lowercase, and one special character")
+    print("Please enter your password. Password word must be at least eight charaters long. Have uppercase and lowercase, one special character, and a digi\n")
     check_pwd = pwd_evaulator(input("Please enter your password: "))
     
     if check_pwd == True:
