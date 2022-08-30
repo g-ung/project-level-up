@@ -20,7 +20,6 @@ def new_dir_seq(dir_path, dir_name):
         print statment: status with number of directories created and where they have been created
     '''
     # change diretory where you want to create your new directories
-    # path = '' # insert your path here
     os.chdir(dir_path) 
    
     # create new directories in sequence
@@ -44,7 +43,6 @@ def new_dir_multiple(folder_path, file_path):
         print statment: status with number of directories created and where they have been created
     '''
     # change to the diretory where you want to create your new directories
-    # path = '' # insert your path here
     os.chdir(folder_path) 
 
     # create multiple directories where name of directories are from a source file
