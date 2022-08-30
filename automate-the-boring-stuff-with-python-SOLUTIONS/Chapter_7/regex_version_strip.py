@@ -56,7 +56,7 @@ def main():
     print(strip_regex('*****Strip this string with asterix*****\n', '*'))
     print('TEST 6: Comma')
     print(strip_regex('Strip, these, commas\n', ','))
-    print('TEST : Leading spaces')
+    print('TEST 7: Leading spaces')
     print(strip_regex('     Strip leading spaces'))
     print('END TEST...')
 
