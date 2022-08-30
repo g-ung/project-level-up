@@ -2,7 +2,7 @@ This directory contains useful Python scripts to automate mundane tasks you migh
 
 I will add additional scripts to his directory as I encounter more boring stuff that could be automated with Python 😎
 
-**Table of Contents**
+#**Table of Contents**
 
 | **Script   Name**                                                                                                                           | **Description**                                                                                                                                                                                                                             |
 |--------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
