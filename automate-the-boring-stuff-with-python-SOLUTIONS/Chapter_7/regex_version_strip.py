@@ -25,8 +25,8 @@ def strip_regex(text, strip_this=None):
         Combine stripping the leading and trailing whitespace in one 
         regex
         '''
-        strip_whitespace = re.compile(r'^\s*(.*?)\s*$') # strip any space, tab, or newline
-        text = re.sub(strip_whitespace,'', text) # replace whitespace wtih empty string in string, text
+        strip_whitespace = re.compile(r'^\s*|\s*$') # strip any space, tab, or newline
+        text = strip_whitespace.sub('', text) # replace whitespace wtih empty string in string, text
         return text
     else:
         '''
@@ -41,22 +41,24 @@ def strip_regex(text, strip_this=None):
     
 def main():
     # test regex version of strip() method
-    print("Regex version of strip() method.  BEGIN TEST...\n")
+    print('Regex version of strip() method.  BEGIN TEST...\n')
 
-    print("TEST 1: Whitespaces")
-    print(strip_regex("     Strip this string with whitespaces      "))
+    print('TEST 1: Whitespaces')
+    print(strip_regex('     Strip this string with whitespaces      '))
     print()
-    print("TEST 2: Hyphens")
-    print(strip_regex("-----Strip this string with hyphens-----\n", "-"))
-    print("TEST 3: ox")
-    print(strip_regex("oxStrip this string with OXsox\n", "ox"))
-    print("TEST 4: Hashes")
-    print(strip_regex("#####Strip this string with hashes#####\n", "#"))
-    print("TEST 5: Asterix")
-    print(strip_regex("*****Strip this string with asterix*****\n", "*"))
-    print("TEST 6: Comma")
-    print(strip_regex("Strip, these, commas\n", ","))
-    print("END TEST...")
+    print('TEST 2: Hyphens')
+    print(strip_regex('-----Strip this string with hyphens-----\n', '-'))
+    print('TEST 3: ox')
+    print(strip_regex('oxStrip this string with OXsox\n', 'ox'))
+    print('TEST 4: Hashes')
+    print(strip_regex('#####Strip this string with hashes#####\n', '#'))
+    print('TEST 5: Asterix')
+    print(strip_regex('*****Strip this string with asterix*****\n', '*'))
+    print('TEST 6: Comma')
+    print(strip_regex('Strip, these, commas\n', ','))
+    print('TEST : Leading spaces')
+    print(strip_regex('     Strip leading spaces'))
+    print('END TEST...')
 
 if __name__ == '__main__':
     main()
