@@ -26,7 +26,7 @@ def new_dir_seq(dir_path, dir_name):
     # create new directories in sequence
     # use range to specify the number of sequencial directories to create
     count = 0
-    for i in range(1, 4):
+    for i in range(1, 4): # add code to the for loop as required to build your directory name
         os.mkdir(dir_name + str(i)) # edit direcotry name sequence here
         count += 1
     
