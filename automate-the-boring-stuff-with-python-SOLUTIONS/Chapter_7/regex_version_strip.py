@@ -58,6 +58,7 @@ def main():
     print(strip_regex('Strip, these, commas\n', ','))
     print('TEST 7: Leading spaces')
     print(strip_regex('     Strip leading spaces'))
+    print()
     print('END TEST...')
 
 if __name__ == '__main__':
