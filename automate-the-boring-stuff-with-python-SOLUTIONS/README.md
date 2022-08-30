@@ -2,7 +2,7 @@ Solutions to some of the projects from the book <a href="https://automatethebori
 
 I may, from time to time, refactor some of the code in this repository as I gain more knowledge and experiece with Python.
 
-**Table of Contents**
+# **Table of Contents**
 
 | **Chapter** | **Title**                                                                                                                                                   | **Practice Project**                                                                                                                                                                                       |
 |-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
