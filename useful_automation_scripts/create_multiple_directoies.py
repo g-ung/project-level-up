@@ -5,7 +5,7 @@ Edit the block of code inside the for loop
 as required.
 
 This script was created so I could create multple
-directories in sequence in one of the folders in my
+directories, in sequence, in one of the folders in my
 GitHub repository
 '''
 import os
