@@ -63,10 +63,10 @@ def main():
     # directory path where you want the new directories to be created
     path = ''
 
-    # file path of your source file
+    # path of your source file
     input_file = ''
 
-    # create multple new directories witih sequencial names
+    # create multple new directories with sequencial names
     new_dir_seq(path, directory)
 
     # create multple new directories with different names from source file
