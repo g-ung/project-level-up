@@ -46,7 +46,6 @@ def new_dir_multiple(folder_path, file_path):
     os.chdir(folder_path) 
 
     # create multiple directories where name of directories are from a source file
-    # input_file = ''# insert location of your input file here
     count = 0
     with open(file_path, 'r') as f:
         for dir in f.readlines():
