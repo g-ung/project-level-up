@@ -31,7 +31,7 @@ def strip_regex(text, strip_this=None):
         return text
     else:
         '''
-        Use re.escape(pattern) funtion to strip any characters or 
+        Use re.escape(pattern) function to strip any characters or 
         escape characters of your text
         REFERENCE:
         https://docs.python.org/3/library/re.html
