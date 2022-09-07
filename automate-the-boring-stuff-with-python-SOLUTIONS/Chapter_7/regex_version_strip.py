@@ -43,7 +43,6 @@ def strip_regex(text, strip_this=None):
 def main():
     # test regex version of strip() method
     print('Regex version of strip() method.  BEGIN TEST...\n')
-
     print('TEST 1: Whitespaces')
     print(strip_regex('     Strip this string with whitespaces      '))
     print()
